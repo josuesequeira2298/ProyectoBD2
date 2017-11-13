@@ -1,0 +1,200 @@
+﻿namespace Presentacion
+{
+    partial class Crear
+    {
+        /// <summary>
+        /// Required designer variable.
+        /// </summary>
+        private System.ComponentModel.IContainer components = null;
+
+        /// <summary>
+        /// Clean up any resources being used.
+        /// </summary>
+        /// <param name="disposing">true if managed resources should be disposed; otherwise, false.</param>
+        protected override void Dispose(bool disposing)
+        {
+            if (disposing && (components != null))
+            {
+                components.Dispose();
+            }
+            base.Dispose(disposing);
+        }
+
+        #region Windows Form Designer generated code
+
+        /// <summary>
+        /// Required method for Designer support - do not modify
+        /// the contents of this method with the code editor.
+        /// </summary>
+        private void InitializeComponent()
+        {
+            this.btncreartabla = new System.Windows.Forms.Button();
+            this.labelnombre = new System.Windows.Forms.Label();
+            this.txtnombretabla = new System.Windows.Forms.TextBox();
+            this.labelcolumnas = new System.Windows.Forms.Label();
+            this.txtdato01 = new System.Windows.Forms.TextBox();
+            this.cmbdato01 = new System.Windows.Forms.ComboBox();
+            this.txttama01 = new System.Windows.Forms.TextBox();
+            this.txtdato02 = new System.Windows.Forms.TextBox();
+            this.cmbdato02 = new System.Windows.Forms.ComboBox();
+            this.txttama02 = new System.Windows.Forms.TextBox();
+            this.txtdato03 = new System.Windows.Forms.TextBox();
+            this.cmbdato03 = new System.Windows.Forms.ComboBox();
+            this.txttama03 = new System.Windows.Forms.TextBox();
+            this.dtgtablas = new System.Windows.Forms.DataGridView();
+            ((System.ComponentModel.ISupportInitialize)(this.dtgtablas)).BeginInit();
+            this.SuspendLayout();
+            // 
+            // btncreartabla
+            // 
+            this.btncreartabla.Location = new System.Drawing.Point(13, 27);
+            this.btncreartabla.Name = "btncreartabla";
+            this.btncreartabla.Size = new System.Drawing.Size(75, 23);
+            this.btncreartabla.TabIndex = 0;
+            this.btncreartabla.Text = "Crear Tabla";
+            this.btncreartabla.UseVisualStyleBackColor = true;
+            // 
+            // labelnombre
+            // 
+            this.labelnombre.AutoSize = true;
+            this.labelnombre.Location = new System.Drawing.Point(10, 62);
+            this.labelnombre.Name = "labelnombre";
+            this.labelnombre.Size = new System.Drawing.Size(44, 13);
+            this.labelnombre.TabIndex = 1;
+            this.labelnombre.Text = "Nombre";
+            // 
+            // txtnombretabla
+            // 
+            this.txtnombretabla.Location = new System.Drawing.Point(74, 59);
+            this.txtnombretabla.Name = "txtnombretabla";
+            this.txtnombretabla.Size = new System.Drawing.Size(100, 20);
+            this.txtnombretabla.TabIndex = 2;
+            // 
+            // labelcolumnas
+            // 
+            this.labelcolumnas.AutoSize = true;
+            this.labelcolumnas.Location = new System.Drawing.Point(13, 92);
+            this.labelcolumnas.Name = "labelcolumnas";
+            this.labelcolumnas.Size = new System.Drawing.Size(53, 13);
+            this.labelcolumnas.TabIndex = 3;
+            this.labelcolumnas.Text = "Columnas";
+            // 
+            // txtdato01
+            // 
+            this.txtdato01.Location = new System.Drawing.Point(16, 121);
+            this.txtdato01.Name = "txtdato01";
+            this.txtdato01.Size = new System.Drawing.Size(100, 20);
+            this.txtdato01.TabIndex = 4;
+            // 
+            // cmbdato01
+            // 
+            this.cmbdato01.FormattingEnabled = true;
+            this.cmbdato01.Location = new System.Drawing.Point(137, 121);
+            this.cmbdato01.Name = "cmbdato01";
+            this.cmbdato01.Size = new System.Drawing.Size(121, 21);
+            this.cmbdato01.TabIndex = 5;
+            // 
+            // txttama01
+            // 
+            this.txttama01.Location = new System.Drawing.Point(274, 121);
+            this.txttama01.Name = "txttama01";
+            this.txttama01.Size = new System.Drawing.Size(100, 20);
+            this.txttama01.TabIndex = 6;
+            // 
+            // txtdato02
+            // 
+            this.txtdato02.Location = new System.Drawing.Point(16, 148);
+            this.txtdato02.Name = "txtdato02";
+            this.txtdato02.Size = new System.Drawing.Size(100, 20);
+            this.txtdato02.TabIndex = 7;
+            // 
+            // cmbdato02
+            // 
+            this.cmbdato02.FormattingEnabled = true;
+            this.cmbdato02.Location = new System.Drawing.Point(137, 146);
+            this.cmbdato02.Name = "cmbdato02";
+            this.cmbdato02.Size = new System.Drawing.Size(121, 21);
+            this.cmbdato02.TabIndex = 8;
+            // 
+            // txttama02
+            // 
+            this.txttama02.Location = new System.Drawing.Point(274, 147);
+            this.txttama02.Name = "txttama02";
+            this.txttama02.Size = new System.Drawing.Size(100, 20);
+            this.txttama02.TabIndex = 9;
+            // 
+            // txtdato03
+            // 
+            this.txtdato03.Location = new System.Drawing.Point(16, 175);
+            this.txtdato03.Name = "txtdato03";
+            this.txtdato03.Size = new System.Drawing.Size(100, 20);
+            this.txtdato03.TabIndex = 10;
+            // 
+            // cmbdato03
+            // 
+            this.cmbdato03.FormattingEnabled = true;
+            this.cmbdato03.Location = new System.Drawing.Point(137, 173);
+            this.cmbdato03.Name = "cmbdato03";
+            this.cmbdato03.Size = new System.Drawing.Size(121, 21);
+            this.cmbdato03.TabIndex = 11;
+            // 
+            // txttama03
+            // 
+            this.txttama03.Location = new System.Drawing.Point(274, 173);
+            this.txttama03.Name = "txttama03";
+            this.txttama03.Size = new System.Drawing.Size(100, 20);
+            this.txttama03.TabIndex = 12;
+            // 
+            // dtgtablas
+            // 
+            this.dtgtablas.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dtgtablas.Location = new System.Drawing.Point(420, 27);
+            this.dtgtablas.Name = "dtgtablas";
+            this.dtgtablas.Size = new System.Drawing.Size(322, 264);
+            this.dtgtablas.TabIndex = 13;
+            // 
+            // Prueba
+            // 
+            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
+            this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.ClientSize = new System.Drawing.Size(754, 303);
+            this.Controls.Add(this.dtgtablas);
+            this.Controls.Add(this.txttama03);
+            this.Controls.Add(this.cmbdato03);
+            this.Controls.Add(this.txtdato03);
+            this.Controls.Add(this.txttama02);
+            this.Controls.Add(this.cmbdato02);
+            this.Controls.Add(this.txtdato02);
+            this.Controls.Add(this.txttama01);
+            this.Controls.Add(this.cmbdato01);
+            this.Controls.Add(this.txtdato01);
+            this.Controls.Add(this.labelcolumnas);
+            this.Controls.Add(this.txtnombretabla);
+            this.Controls.Add(this.labelnombre);
+            this.Controls.Add(this.btncreartabla);
+            this.Name = "Prueba";
+            this.Text = "Prueba";
+            ((System.ComponentModel.ISupportInitialize)(this.dtgtablas)).EndInit();
+            this.ResumeLayout(false);
+            this.PerformLayout();
+
+        }
+
+        #endregion
+
+        private System.Windows.Forms.Button btncreartabla;
+        private System.Windows.Forms.Label labelnombre;
+        private System.Windows.Forms.TextBox txtnombretabla;
+        private System.Windows.Forms.Label labelcolumnas;
+        private System.Windows.Forms.TextBox txtdato01;
+        private System.Windows.Forms.ComboBox cmbdato01;
+        private System.Windows.Forms.TextBox txttama01;
+        private System.Windows.Forms.TextBox txtdato02;
+        private System.Windows.Forms.ComboBox cmbdato02;
+        private System.Windows.Forms.TextBox txttama02;
+        private System.Windows.Forms.TextBox txtdato03;
+        private System.Windows.Forms.ComboBox cmbdato03;
+        private System.Windows.Forms.TextBox txttama03;
+        private System.Windows.Forms.DataGridView dtgtablas;
+    }
+}

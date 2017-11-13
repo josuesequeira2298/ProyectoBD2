@@ -1,11 +1,18 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
-# Visual Studio 15
-VisualStudioVersion = 15.0.26430.16
+# Visual Studio 14
+VisualStudioVersion = 14.0.25420.1
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Presentacion", "Presentacion\Presentacion.csproj", "{055AF357-A2B0-4672-B270-3752A58147C4}"
+	ProjectSection(ProjectDependencies) = postProject
+		{081B5A45-A24C-4DFA-B268-0FD1344B5963} = {081B5A45-A24C-4DFA-B268-0FD1344B5963}
+		{CA06D2CA-F56C-4E1F-906B-705029371763} = {CA06D2CA-F56C-4E1F-906B-705029371763}
+	EndProjectSection
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Logica", "Logica\Logica.csproj", "{CA06D2CA-F56C-4E1F-906B-705029371763}"
+	ProjectSection(ProjectDependencies) = postProject
+		{081B5A45-A24C-4DFA-B268-0FD1344B5963} = {081B5A45-A24C-4DFA-B268-0FD1344B5963}
+	EndProjectSection
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Datos", "Datos\Datos.csproj", "{081B5A45-A24C-4DFA-B268-0FD1344B5963}"
 EndProject

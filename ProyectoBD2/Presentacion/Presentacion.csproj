@@ -64,6 +64,11 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="cmbdato.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>cmbdato.xsd</DependentUpon>
+    </Compile>
     <Compile Include="Form1.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -78,6 +83,21 @@
     <Compile Include="Crear.Designer.cs">
       <DependentUpon>Crear.cs</DependentUpon>
     </Compile>
+    <Compile Include="ProyectoBD02DataSet.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>ProyectoBD02DataSet.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="ProyectoBD02DataSet1.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>ProyectoBD02DataSet1.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="ProyectoBD02DataSet2.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>ProyectoBD02DataSet2.xsd</DependentUpon>
+    </Compile>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
       <LastGenOutput>Resources.Designer.cs</LastGenOutput>
@@ -90,6 +110,17 @@
     <EmbeddedResource Include="Crear.resx">
       <DependentUpon>Crear.cs</DependentUpon>
     </EmbeddedResource>
+    <None Include="cmbdato.xsc">
+      <DependentUpon>cmbdato.xsd</DependentUpon>
+    </None>
+    <None Include="cmbdato.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>cmbdato.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="cmbdato.xss">
+      <DependentUpon>cmbdato.xsd</DependentUpon>
+    </None>
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
       <LastGenOutput>Settings.Designer.cs</LastGenOutput>
@@ -99,6 +130,39 @@
       <DependentUpon>Settings.settings</DependentUpon>
       <DesignTimeSharedInput>True</DesignTimeSharedInput>
     </Compile>
+    <None Include="ProyectoBD02DataSet.xsc">
+      <DependentUpon>ProyectoBD02DataSet.xsd</DependentUpon>
+    </None>
+    <None Include="ProyectoBD02DataSet.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>ProyectoBD02DataSet.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="ProyectoBD02DataSet.xss">
+      <DependentUpon>ProyectoBD02DataSet.xsd</DependentUpon>
+    </None>
+    <None Include="ProyectoBD02DataSet1.xsc">
+      <DependentUpon>ProyectoBD02DataSet1.xsd</DependentUpon>
+    </None>
+    <None Include="ProyectoBD02DataSet1.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>ProyectoBD02DataSet1.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="ProyectoBD02DataSet1.xss">
+      <DependentUpon>ProyectoBD02DataSet1.xsd</DependentUpon>
+    </None>
+    <None Include="ProyectoBD02DataSet2.xsc">
+      <DependentUpon>ProyectoBD02DataSet2.xsd</DependentUpon>
+    </None>
+    <None Include="ProyectoBD02DataSet2.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>ProyectoBD02DataSet2.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="ProyectoBD02DataSet2.xss">
+      <DependentUpon>ProyectoBD02DataSet2.xsd</DependentUpon>
+    </None>
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />

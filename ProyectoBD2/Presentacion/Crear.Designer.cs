@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             this.btncreartabla = new System.Windows.Forms.Button();
             this.labelnombre = new System.Windows.Forms.Label();
             this.txtnombretabla = new System.Windows.Forms.TextBox();
@@ -42,12 +43,34 @@
             this.cmbdato03 = new System.Windows.Forms.ComboBox();
             this.txttama03 = new System.Windows.Forms.TextBox();
             this.dtgtablas = new System.Windows.Forms.DataGridView();
+            this.proyectoBD02DataSet = new Presentacion.ProyectoBD02DataSet();
+            this.tablasBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.tablasTableAdapter = new Presentacion.ProyectoBD02DataSetTableAdapters.TablasTableAdapter();
+            this.proyectoBD02DataSetBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.proyectoBD02DataSet1 = new Presentacion.ProyectoBD02DataSet1();
+            this.tipodatoBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.tipodatoTableAdapter = new Presentacion.ProyectoBD02DataSet1TableAdapters.tipodatoTableAdapter();
+            this.proyectoBD02DataSet2 = new Presentacion.ProyectoBD02DataSet2();
+            this.tipodatoBindingSource1 = new System.Windows.Forms.BindingSource(this.components);
+            this.tipodatoTableAdapter1 = new Presentacion.ProyectoBD02DataSet2TableAdapters.tipodatoTableAdapter();
+            this.cmbdato = new Presentacion.cmbdato();
+            this.tipodatoBindingSource2 = new System.Windows.Forms.BindingSource(this.components);
+            this.tipodatoTableAdapter2 = new Presentacion.cmbdatoTableAdapters.tipodatoTableAdapter();
             ((System.ComponentModel.ISupportInitialize)(this.dtgtablas)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.proyectoBD02DataSet)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.tablasBindingSource)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.proyectoBD02DataSetBindingSource)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.proyectoBD02DataSet1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.tipodatoBindingSource)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.proyectoBD02DataSet2)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.tipodatoBindingSource1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.cmbdato)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.tipodatoBindingSource2)).BeginInit();
             this.SuspendLayout();
             // 
             // btncreartabla
             // 
-            this.btncreartabla.Location = new System.Drawing.Point(13, 27);
+            this.btncreartabla.Location = new System.Drawing.Point(16, 12);
             this.btncreartabla.Name = "btncreartabla";
             this.btncreartabla.Size = new System.Drawing.Size(75, 23);
             this.btncreartabla.TabIndex = 0;
@@ -58,7 +81,7 @@
             // labelnombre
             // 
             this.labelnombre.AutoSize = true;
-            this.labelnombre.Location = new System.Drawing.Point(10, 62);
+            this.labelnombre.Location = new System.Drawing.Point(13, 62);
             this.labelnombre.Name = "labelnombre";
             this.labelnombre.Size = new System.Drawing.Size(44, 13);
             this.labelnombre.TabIndex = 1;
@@ -74,7 +97,7 @@
             // labelcolumnas
             // 
             this.labelcolumnas.AutoSize = true;
-            this.labelcolumnas.Location = new System.Drawing.Point(13, 92);
+            this.labelcolumnas.Location = new System.Drawing.Point(13, 93);
             this.labelcolumnas.Name = "labelcolumnas";
             this.labelcolumnas.Size = new System.Drawing.Size(53, 13);
             this.labelcolumnas.TabIndex = 3;
@@ -94,6 +117,7 @@
             this.cmbdato01.Name = "cmbdato01";
             this.cmbdato01.Size = new System.Drawing.Size(121, 21);
             this.cmbdato01.TabIndex = 5;
+            this.cmbdato01.SelectedIndexChanged += new System.EventHandler(this.cmbdato01_SelectedIndexChanged);
             // 
             // txttama01
             // 
@@ -149,17 +173,78 @@
             // dtgtablas
             // 
             this.dtgtablas.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dtgtablas.Location = new System.Drawing.Point(420, 27);
+            this.dtgtablas.Location = new System.Drawing.Point(398, 27);
             this.dtgtablas.Name = "dtgtablas";
-            this.dtgtablas.Size = new System.Drawing.Size(322, 264);
+            this.dtgtablas.Size = new System.Drawing.Size(526, 264);
             this.dtgtablas.TabIndex = 13;
             this.dtgtablas.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dtgtablas_CellContentClick);
+            // 
+            // proyectoBD02DataSet
+            // 
+            this.proyectoBD02DataSet.DataSetName = "ProyectoBD02DataSet";
+            this.proyectoBD02DataSet.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
+            // 
+            // tablasBindingSource
+            // 
+            this.tablasBindingSource.DataMember = "Tablas";
+            this.tablasBindingSource.DataSource = this.proyectoBD02DataSet;
+            // 
+            // tablasTableAdapter
+            // 
+            this.tablasTableAdapter.ClearBeforeFill = true;
+            // 
+            // proyectoBD02DataSetBindingSource
+            // 
+            this.proyectoBD02DataSetBindingSource.DataSource = this.proyectoBD02DataSet;
+            this.proyectoBD02DataSetBindingSource.Position = 0;
+            // 
+            // proyectoBD02DataSet1
+            // 
+            this.proyectoBD02DataSet1.DataSetName = "ProyectoBD02DataSet1";
+            this.proyectoBD02DataSet1.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
+            // 
+            // tipodatoBindingSource
+            // 
+            this.tipodatoBindingSource.DataMember = "tipodato";
+            this.tipodatoBindingSource.DataSource = this.proyectoBD02DataSet1;
+            // 
+            // tipodatoTableAdapter
+            // 
+            this.tipodatoTableAdapter.ClearBeforeFill = true;
+            // 
+            // proyectoBD02DataSet2
+            // 
+            this.proyectoBD02DataSet2.DataSetName = "ProyectoBD02DataSet2";
+            this.proyectoBD02DataSet2.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
+            // 
+            // tipodatoBindingSource1
+            // 
+            this.tipodatoBindingSource1.DataMember = "tipodato";
+            this.tipodatoBindingSource1.DataSource = this.proyectoBD02DataSet2;
+            // 
+            // tipodatoTableAdapter1
+            // 
+            this.tipodatoTableAdapter1.ClearBeforeFill = true;
+            // 
+            // cmbdato
+            // 
+            this.cmbdato.DataSetName = "cmbdato";
+            this.cmbdato.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
+            // 
+            // tipodatoBindingSource2
+            // 
+            this.tipodatoBindingSource2.DataMember = "tipodato";
+            this.tipodatoBindingSource2.DataSource = this.cmbdato;
+            // 
+            // tipodatoTableAdapter2
+            // 
+            this.tipodatoTableAdapter2.ClearBeforeFill = true;
             // 
             // Crear
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(754, 303);
+            this.ClientSize = new System.Drawing.Size(936, 303);
             this.Controls.Add(this.dtgtablas);
             this.Controls.Add(this.txttama03);
             this.Controls.Add(this.cmbdato03);
@@ -178,6 +263,15 @@
             this.Text = "Prueba";
             this.Load += new System.EventHandler(this.Crear_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dtgtablas)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.proyectoBD02DataSet)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.tablasBindingSource)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.proyectoBD02DataSetBindingSource)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.proyectoBD02DataSet1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.tipodatoBindingSource)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.proyectoBD02DataSet2)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.tipodatoBindingSource1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.cmbdato)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.tipodatoBindingSource2)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -199,5 +293,18 @@
         private System.Windows.Forms.ComboBox cmbdato03;
         private System.Windows.Forms.TextBox txttama03;
         private System.Windows.Forms.DataGridView dtgtablas;
+        private ProyectoBD02DataSet proyectoBD02DataSet;
+        private System.Windows.Forms.BindingSource tablasBindingSource;
+        private ProyectoBD02DataSetTableAdapters.TablasTableAdapter tablasTableAdapter;
+        private System.Windows.Forms.BindingSource proyectoBD02DataSetBindingSource;
+        private ProyectoBD02DataSet1 proyectoBD02DataSet1;
+        private System.Windows.Forms.BindingSource tipodatoBindingSource;
+        private ProyectoBD02DataSet1TableAdapters.tipodatoTableAdapter tipodatoTableAdapter;
+        private ProyectoBD02DataSet2 proyectoBD02DataSet2;
+        private System.Windows.Forms.BindingSource tipodatoBindingSource1;
+        private ProyectoBD02DataSet2TableAdapters.tipodatoTableAdapter tipodatoTableAdapter1;
+        private cmbdato cmbdato;
+        private System.Windows.Forms.BindingSource tipodatoBindingSource2;
+        private cmbdatoTableAdapters.tipodatoTableAdapter tipodatoTableAdapter2;
     }
 }

@@ -10,8 +10,9 @@ namespace Datos
 {
     public class Conexion
     {
-        private SqlConnection oCN = new SqlConnection(@"Data Source=proyectodb02.database.windows.net;Initial Catalog=ProyectoBD02;User ID=administrador");
-        
+        //private SqlConnection oCN = new SqlConnection(@"Data Source=proyectodb02.database.windows.net;Initial Catalog=ProyectoBD02;Persist Security Info=True;User ID=administrador");
+        private SqlConnection oCN = new SqlConnection(@"Data Source=DESKTOP-IVNC8A5\SQL2014;Initial Catalog=ProyectoBD02;Integrated Security=True");
+
 
         public bool abrirConexion()
         {

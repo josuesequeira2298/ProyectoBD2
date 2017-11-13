@@ -10,31 +10,31 @@ namespace Datos
 {
     public class Conexion
     {
-        SqlConnection objConnection = new SqlConnection("Server=tcp:proyectodb02.database.windows.net,1433;Initial Catalog=ProyectoBD02;Persist Security Info=False;User ID=administrador;Password=Admin12.;MultipleActiveResultSets=False;Encrypt=True;TrustServerCertificate=False;Connection Timeout=30;");
+        private SqlConnection oCN = new SqlConnection("Data Source=proyectodb02.database.windows.net;Persist Security Info=True;User ID=administrador");
 
-        private bool OpenConnection()
+        public bool abrirConexion()
         {
             try
             {
-                objConnection.Open();
+                oCN.Open();
                 return true;
             }
             catch (Exception)
             {
+
                 return false;
-                throw;
             }
         }
 
-        private bool CloseConnection()
+        public bool cerrarConexion()
         {
             try
             {
-                if (objConnection.State == ConnectionState.Closed)
+                if (oCN.State == ConnectionState.Closed)
                 {
                     return true;
                 }
-                objConnection.Close();
+                oCN.Close();
                 return true;
             }
             catch (Exception)
@@ -43,28 +43,66 @@ namespace Datos
             }
             finally
             {
-                objConnection.Close();
+                oCN.Close();
             }
+
         }
 
-        public DataTable ExecuteQuery(SqlCommand oSQLC)
+        public DataTable ejecutar(String txtSelect)
         {
+            SqlCommand cSelect = new SqlCommand();
+            DataTable oDT = new DataTable();
+            SqlDataAdapter oSQLDA = new SqlDataAdapter(cSelect);
+
             try
             {
-                DataTable oDT = new DataTable();
-                SqlDataAdapter oSQLDA = new SqlDataAdapter(oSQLC);
-                oSQLC.Connection = objConnection;
-                if (OpenConnection())
-                {
-                    oSQLDA.Fill(oDT);
-                }
-                CloseConnection();
-                return oDT;
+                cSelect.CommandText = txtSelect;
+                cSelect.Connection = oCN;
             }
-            catch (SqlException e)
+            catch (Exception)
+            {
+
+                throw;
+            }
+            if (abrirConexion())
+            {
+                oSQLDA.Fill(oDT);
+            }
+            cerrarConexion();
+
+            return oDT;
+        }
+
+        public bool ejecutarInsert(String txtInsert)
+        {
+            SqlCommand cInsert = new SqlCommand(txtInsert);
+            try
+            {
+                cInsert.Connection = oCN;
+                cInsert.CommandType = CommandType.Text;
+                if (abrirConexion())
+                {
+                    cInsert.ExecuteNonQuery();
+                }
+                cerrarConexion();
+                return true;
+            }
+            catch (Exception e)
             {
                 throw e;
+
             }
+        }
+        public DataTable consultar(String consulta)
+        {
+            abrirConexion();
+            SqlCommand comando = new SqlCommand(consulta, oCN);
+            SqlDataAdapter dataAdapter = new SqlDataAdapter(comando);
+            SqlCommandBuilder commandBuilder = new SqlCommandBuilder(dataAdapter);
+            DataTable dt = new DataTable();
+            dataAdapter.Fill(dt);
+            cerrarConexion();
+            return dt;
         }
     }
 }

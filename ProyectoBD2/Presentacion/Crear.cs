@@ -16,5 +16,30 @@ namespace Presentacion
         {
             InitializeComponent();
         }
+
+        private void Crear_Load(object sender, EventArgs e)
+        {
+            ConsultarTablas();
+        }
+
+        public void ConsultarTablas()
+        {
+            Logica.Creartabla consulta = new Logica.Creartabla();
+            DataTable dttablas = new DataTable();
+
+            dttablas = consulta.ConsultarTablas();
+            dtgtablas.DataSource = dttablas;
+
+        }
+
+        private void dtgtablas_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+
+        }
+
+        private void btncreartabla_Click(object sender, EventArgs e)
+        {
+            ConsultarTablas();
+        }
     }
 }

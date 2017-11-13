@@ -53,6 +53,7 @@
             this.btncreartabla.TabIndex = 0;
             this.btncreartabla.Text = "Crear Tabla";
             this.btncreartabla.UseVisualStyleBackColor = true;
+            this.btncreartabla.Click += new System.EventHandler(this.btncreartabla_Click);
             // 
             // labelnombre
             // 
@@ -152,8 +153,9 @@
             this.dtgtablas.Name = "dtgtablas";
             this.dtgtablas.Size = new System.Drawing.Size(322, 264);
             this.dtgtablas.TabIndex = 13;
+            this.dtgtablas.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dtgtablas_CellContentClick);
             // 
-            // Prueba
+            // Crear
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
@@ -172,8 +174,9 @@
             this.Controls.Add(this.txtnombretabla);
             this.Controls.Add(this.labelnombre);
             this.Controls.Add(this.btncreartabla);
-            this.Name = "Prueba";
+            this.Name = "Crear";
             this.Text = "Prueba";
+            this.Load += new System.EventHandler(this.Crear_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dtgtablas)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();

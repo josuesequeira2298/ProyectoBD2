@@ -30,6 +30,7 @@ namespace Presentacion
             dttablas = consulta.ConsultarTablas();
             dtgtablas.DataSource = dttablas;
 
+
         }
 
         private void dtgtablas_CellContentClick(object sender, DataGridViewCellEventArgs e)

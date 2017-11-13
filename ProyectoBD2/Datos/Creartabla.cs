@@ -15,6 +15,7 @@ namespace Datos
             DataTable dttablas;
             dttablas = conectar.ejecutar("select * from Tablas");
             return dttablas;
+
         }
     }
 }

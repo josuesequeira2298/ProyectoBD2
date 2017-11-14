@@ -27,10 +27,19 @@ namespace Presentacion
 
         public void llenarcombo()
         {
-            Logica.Creartabla lista = new Logica.Creartabla();
-            this.cmbdato01.DataSource = lista.llenarcombo();
-            this.cmbdato01.DisplayMember = lista.llenarcombo().ToList().ToString();
-            //this.cmbdato01.ValueMember = lista.llenarcombo().ToList().ToString();
+            Logica.Creartabla datos = new Logica.Creartabla();
+            DataTable dtDatos = new DataTable();
+
+
+            dtDatos = datos.llenarcombo();
+            cmbdato01.DataSource = dtDatos;
+            cmbdato01.DisplayMember = "Dato";
+            cmbdato01.ValueMember = "Dato";
+
+            //Logica.Creartabla lista = new Logica.Creartabla();
+            //this.cmbdato01.DataSource = lista.llenarcombo();
+            //this.cmbdato01.DisplayMember = lista.llenarcombo().ToList().ToString();
+            ////this.cmbdato01.ValueMember = lista.llenarcombo().ToList().ToString();
         }
 
         public void ConsultarTablas()
@@ -42,6 +51,8 @@ namespace Presentacion
             dtgtablas.DataSource = dttablas;
         }
 
+        
+
         private void dtgtablas_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {
 
@@ -51,6 +62,8 @@ namespace Presentacion
         {
             ConsultarTablas();
         }
+
+
 
         private void cmbdato01_SelectedIndexChanged(object sender, EventArgs e)
         {

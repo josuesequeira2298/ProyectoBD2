@@ -25,55 +25,59 @@ namespace Datos
 
         }
 
-        public List<listas> llenarcombo()
+        public DataTable llenarcombo()
         {
             Datos.Conexion conectar = new Datos.Conexion();
-            List<listas> datos;
-            try
+            DataTable DtDatos;
+            DtDatos = conectar.ejecutar("SELECT Id_Persona as Identificación, Activo as Activo from dbo.Cliente");
+            return DtDatos;
+
+            //    try
+            //    {
+
+            //        SqlDataReader dr;
+            //        Conectar(true);
+            //        objComando = new SqlCommand();
+            //        objComando.Connection = objConexion;
+            //        objComando.CommandTimeout = 0;
+            //        objComando.CommandType = CommandType.Text;
+            //        objComando.CommandText = "select Nombre from tipodato";
+
+            //        listadolistas = new List<listas>();
+
+            //        dr = objComando.ExecuteReader();
+            //        while (dr.Read())
+            //        {
+            //            listas objlistas = new listas();
+            //            objlistas.Datos = dr.GetString(1);
+            //            listadolistas.Add(objlistas);
+            //        }
+
+            //    }
+            //    catch(Exception ex)
+            //    {
+            //        ex.ToString();
+            //    }
+            //    datos = listadolistas;
+            //    return datos;
+
+        }
+
+            private void Conectar(bool pConectar)
             {
-
-                SqlDataReader dr;
-                Conectar(true);
-                objComando = new SqlCommand();
-                objComando.Connection = objConexion;
-                objComando.CommandTimeout = 0;
-                objComando.CommandType = CommandType.Text;
-                objComando.CommandText = "select Nombre from tipodato";
-
-                listadolistas = new List<listas>();
-                
-                dr = objComando.ExecuteReader();
-                while (dr.Read())
+                objConexion = new SqlConnection();
+                objConexion.ConnectionString = Cadena;
+                if (pConectar)
                 {
-                    listas objlistas = new listas();
-                    objlistas.Datos = dr.GetString(1);
-                    listadolistas.Add(objlistas);
+                    objConexion.Open();
                 }
-                
+                else
+                {
+                    objConexion.Close();
+
+                }
             }
-            catch(Exception ex)
-            {
-                ex.ToString();
-            }
-            datos = listadolistas;
-            return datos;
 
         }
-
-        private void Conectar(bool pConectar)
-        {
-            objConexion = new SqlConnection();
-            objConexion.ConnectionString = Cadena;
-            if (pConectar)
-            {
-                objConexion.Open();
-            }
-            else
-            {
-                objConexion.Close();
-
-            }
-        }
-
     }
-}
+

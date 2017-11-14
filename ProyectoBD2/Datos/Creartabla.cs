@@ -25,7 +25,7 @@ namespace Datos
         {
             Datos.Conexion conectar = new Datos.Conexion();
             DataTable DtDatos;
-            DtDatos = conectar.ejecutar("select * from tipodato;");
+            DtDatos = conectar.ejecutar("select Nombre from tipodato;");
             return DtDatos;
 
             //    try

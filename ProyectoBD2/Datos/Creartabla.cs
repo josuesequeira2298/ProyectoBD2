@@ -59,21 +59,9 @@ namespace Datos
 
         }
 
-            private void Conectar(bool pConectar)
-            {
-                objConexion = new SqlConnection();
-                objConexion.ConnectionString = Cadena;
-                if (pConectar)
-                {
-                    objConexion.Open();
-                }
-                else
-                {
-                    objConexion.Close();
-
-                }
+            
             }
 
         }
-    }
+    
 

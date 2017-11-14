@@ -10,10 +10,6 @@ namespace Datos
 {
     public class Creartabla
     {
-        string Cadena = @"Data Source=DESKTOP-IVNC8A5\SQL2014;Initial Catalog=ProyectoBD02;Integrated Security=True";
-        SqlConnection objConexion;
-        SqlCommand objComando;
-        List<listas> listadolistas;
 
         public DataTable ConsultarTablas()
         {

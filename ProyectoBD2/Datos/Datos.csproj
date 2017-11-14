@@ -42,7 +42,6 @@
   <ItemGroup>
     <Compile Include="Conexion.cs" />
     <Compile Include="Creartabla.cs" />
-    <Compile Include="listas.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

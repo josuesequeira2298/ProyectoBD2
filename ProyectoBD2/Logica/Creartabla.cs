@@ -13,5 +13,11 @@ namespace Logica
         {
             return new Datos.Creartabla().ConsultarTablas();
         }
+        
+        public List<Datos.listas> llenarcombo()
+        {
+            Datos.Creartabla lista = new Datos.Creartabla();
+            return lista.llenarcombo();
+        }
     }
 }

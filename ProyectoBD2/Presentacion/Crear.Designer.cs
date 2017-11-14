@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             this.btncreartabla = new System.Windows.Forms.Button();
             this.labelnombre = new System.Windows.Forms.Label();
             this.txtnombretabla = new System.Windows.Forms.TextBox();
@@ -48,7 +49,9 @@
             this.cmbdato05 = new System.Windows.Forms.ComboBox();
             this.txttama05 = new System.Windows.Forms.TextBox();
             this.dtgtablas = new System.Windows.Forms.DataGridView();
+            
             ((System.ComponentModel.ISupportInitialize)(this.dtgtablas)).BeginInit();
+
             this.SuspendLayout();
             // 
             // btncreartabla
@@ -95,11 +98,14 @@
             // 
             // cmbdato01
             // 
+            
+            this.cmbdato01.DisplayMember = "ID";
             this.cmbdato01.FormattingEnabled = true;
             this.cmbdato01.Location = new System.Drawing.Point(137, 121);
             this.cmbdato01.Name = "cmbdato01";
             this.cmbdato01.Size = new System.Drawing.Size(121, 21);
             this.cmbdato01.TabIndex = 5;
+            this.cmbdato01.ValueMember = "Nombre";
             this.cmbdato01.SelectedIndexChanged += new System.EventHandler(this.cmbdato01_SelectedIndexChanged);
             // 
             // txttama01
@@ -207,6 +213,11 @@
             this.dtgtablas.Size = new System.Drawing.Size(406, 234);
             this.dtgtablas.TabIndex = 20;
             // 
+            // proyectoBD02DataSet
+            // 
+  
+            // tipodatoBindingSource1
+
             // Crear
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -236,6 +247,7 @@
             this.Text = "Prueba";
             this.Load += new System.EventHandler(this.Crear_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dtgtablas)).EndInit();
+
             this.ResumeLayout(false);
             this.PerformLayout();
 

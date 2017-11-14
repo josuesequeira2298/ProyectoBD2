@@ -20,7 +20,7 @@ namespace Presentacion
 
         private void Crear_Load(object sender, EventArgs e)
         {
-
+            
             ConsultarTablas();
             llenarcombo();
         }

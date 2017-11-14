@@ -67,12 +67,12 @@ namespace Presentacion
 
         private void cmbdato01_SelectedIndexChanged(object sender, EventArgs e)
         {
-
+            llenarcombo();
         }
 
         private void comboBox2_SelectedIndexChanged(object sender, EventArgs e)
         {
-
+            
         }
     }
 }

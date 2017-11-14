@@ -34,7 +34,7 @@ namespace Presentacion
             dtDatos = datos.llenarcombo();
             cmbdato01.DataSource = dtDatos;
             cmbdato01.DisplayMember = "Dato";
-            cmbdato01.ValueMember = "Dato";
+            //cmbdato01.ValueMember = "Dato";
 
             //Logica.Creartabla lista = new Logica.Creartabla();
             //this.cmbdato01.DataSource = lista.llenarcombo();

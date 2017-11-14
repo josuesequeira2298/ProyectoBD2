@@ -29,7 +29,7 @@ namespace Datos
         {
             Datos.Conexion conectar = new Datos.Conexion();
             DataTable DtDatos;
-            DtDatos = conectar.ejecutar("SELECT Id_Persona as Identificación, Activo as Activo from dbo.Cliente");
+            DtDatos = conectar.ejecutar("select * from tipodato;");
             return DtDatos;
 
             //    try

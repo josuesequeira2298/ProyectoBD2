@@ -13,6 +13,10 @@ namespace Logica
         {
             return new Datos.Creartabla().ConsultarTablas();
         }
+        public DataTable consultarcolumnas(string nombretabla)
+        {
+            return new Datos.Creartabla().consultarcolumnas(nombretabla);
+        }
         
         public DataTable llenarcombo()
         {
@@ -29,6 +33,14 @@ namespace Logica
         {
             Datos.Creartabla datos = new Datos.Creartabla();
             return datos.llenarcombocolumna(nombretabla);
+        }
+        public bool eliminarcolumna(string nombretabla, string nombrecolumna)
+        {
+            return new Datos.Creartabla().eliminarcolumna(nombretabla, nombrecolumna);
+        }
+        public bool eliminartabla(string nombretabla)
+        {
+            return new Datos.Creartabla().eliminartabla(nombretabla);
         }
         public bool agregartablaidentity(string nombretabla, string nombrecolumna, string tipodato, string inicioide, string finide)
         {

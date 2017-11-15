@@ -87,10 +87,25 @@ namespace Presentacion
         }
 
 
+        private void consultarcolumnas()
+        {
+            try
+            {
+                Logica.Creartabla consulta = new Logica.Creartabla();
+                DataTable dtcolumnas = new DataTable();
+                dtcolumnas = consulta.consultarcolumnas(cmbnombretabla.Text);
+                dtgtablasdedic.DataSource = dtcolumnas;
+            }
+            catch
+            {
+                MessageBox.Show("La tabla no existe");
+            }
+        }
 
         private void dtgtablas_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {
-
+            
+            
         }
 
         private void btncreartabla_Click(object sender, EventArgs e)
@@ -305,6 +320,52 @@ namespace Presentacion
         private void cmbnombretabla_Click(object sender, EventArgs e)
         {
             llenarcombotablas();
+        }
+        private void eliminarcolumna()
+        {
+            Logica.Creartabla eliminar = new Logica.Creartabla();
+            try
+            {
+                eliminar.eliminarcolumna(cmbnombretabla.Text, cmbnombrecolum.Text);
+                MessageBox.Show("Columna eliminada correctamente");
+            }
+            catch
+            {
+                MessageBox.Show("Error de sintaxis, favor revisar");
+            }
+        }
+
+        private void eliminartabla()
+        {
+            Logica.Creartabla eliminar = new Logica.Creartabla();
+            try
+            {
+                eliminar.eliminartabla(cmbnombretabla.Text);
+                MessageBox.Show("Tabla eliminada correctamente");
+            }
+            catch
+            {
+                MessageBox.Show("Error de sintaxis, favor revisar");
+            }
+        }
+
+        private void btneliminarcolumn_Click(object sender, EventArgs e)
+        {
+            eliminarcolumna();
+            limpiarTodo();
+            ConsultarTablas();
+        }
+
+        private void btneliminartabla_Click(object sender, EventArgs e)
+        {
+            eliminartabla();
+            limpiarTodo();
+            ConsultarTablas();
+        }
+
+        private void cmbnombretabla_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            consultarcolumnas();
         }
     }
 }

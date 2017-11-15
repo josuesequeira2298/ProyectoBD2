@@ -19,10 +19,15 @@ namespace Datos
             DataTable dttablas;
             dttablas = conectar.ejecutar("select * from Tablas");
             return dttablas;
-
-
         }
 
+        public DataTable consultarcolumnas(string nombretabla)
+        {
+            Datos.Conexion conectar = new Datos.Conexion();
+            DataTable dtcolumnas;
+            dtcolumnas = conectar.ejecutar("select * from "+nombretabla+"");
+            return dtcolumnas;
+        }
         public DataTable llenarcombo()
         {
             Datos.Conexion conectar = new Datos.Conexion();
@@ -47,6 +52,37 @@ namespace Datos
             return dttablas;
         }
 
+        public bool eliminarcolumna(string nombretabla, string nombrecolumna)
+        {
+            bool eliminandocolumna;
+            bool eliminandocolumna02;
+            bool eliminandocolumna03;
+
+            eliminandocolumna = conect.ejecutarInsert("alter table "+nombretabla+" drop column "+nombrecolumna+"");
+            if (eliminandocolumna)
+            {
+                eliminandocolumna02 = conect.ejecutarInsert("UPDATE Tablas SET Numero_Columnas = (Numero_Columnas-1)where Nombre = '" + nombretabla + "'");
+                eliminandocolumna03 = conect.ejecutarInsert("delete from Columnas where NombreTabla = '"+nombretabla+"' and NombreColumna = '"+nombrecolumna+"'");
+                return true;
+            }
+            return false;
+        }
+
+        public bool eliminartabla(string nombretabla)
+        {
+            bool eliminartabla;
+            bool eliminartabla2;
+            bool eliminartabla3;
+
+            eliminartabla = conect.ejecutarInsert("drop table "+nombretabla+"");
+            if (eliminartabla)
+            {
+                eliminartabla2 = conect.ejecutarInsert("delete from Columnas where NombreTabla = '"+nombretabla+"' ");
+                eliminartabla3 = conect.ejecutarInsert("delete from Tablas where Nombre = '"+nombretabla+"';");
+                return true;
+            }
+            return false;
+        }
         public bool agregartablaidentity(string nombretabla, string nombrecolumna, string tipodato, string inicioide, string finide)
         {
             bool agregandotablas;

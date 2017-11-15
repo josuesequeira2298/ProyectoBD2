@@ -50,7 +50,6 @@
             this.cmbnombretabla = new System.Windows.Forms.ComboBox();
             this.dtgtablasdedic = new System.Windows.Forms.DataGridView();
             this.label1 = new System.Windows.Forms.Label();
-            this.btnllenardtg = new System.Windows.Forms.Button();
             this.label2 = new System.Windows.Forms.Label();
             this.cmbnombrecolum = new System.Windows.Forms.ComboBox();
             this.btneliminarcolumn = new System.Windows.Forms.Button();
@@ -234,10 +233,12 @@
             this.cmbnombretabla.Name = "cmbnombretabla";
             this.cmbnombretabla.Size = new System.Drawing.Size(121, 21);
             this.cmbnombretabla.TabIndex = 32;
+            this.cmbnombretabla.SelectedIndexChanged += new System.EventHandler(this.cmbnombretabla_SelectedIndexChanged);
             this.cmbnombretabla.Click += new System.EventHandler(this.cmbnombretabla_Click);
             // 
             // dtgtablasdedic
             // 
+            this.dtgtablasdedic.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.dtgtablasdedic.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dtgtablasdedic.Location = new System.Drawing.Point(381, 284);
             this.dtgtablasdedic.Name = "dtgtablasdedic";
@@ -253,16 +254,6 @@
             this.label1.Size = new System.Drawing.Size(74, 13);
             this.label1.TabIndex = 34;
             this.label1.Text = "Nombre Tabla";
-            // 
-            // btnllenardtg
-            // 
-            this.btnllenardtg.Location = new System.Drawing.Point(249, 284);
-            this.btnllenardtg.Name = "btnllenardtg";
-            this.btnllenardtg.Size = new System.Drawing.Size(75, 23);
-            this.btnllenardtg.TabIndex = 35;
-            this.btnllenardtg.Text = "Llamar Tabla";
-            this.btnllenardtg.UseVisualStyleBackColor = true;
-            this.btnllenardtg.Click += new System.EventHandler(this.btnllenardtg_Click);
             // 
             // label2
             // 
@@ -287,19 +278,21 @@
             // 
             this.btneliminarcolumn.Location = new System.Drawing.Point(249, 313);
             this.btneliminarcolumn.Name = "btneliminarcolumn";
-            this.btneliminarcolumn.Size = new System.Drawing.Size(75, 23);
+            this.btneliminarcolumn.Size = new System.Drawing.Size(100, 23);
             this.btneliminarcolumn.TabIndex = 38;
             this.btneliminarcolumn.Text = "Eliminar Columna";
             this.btneliminarcolumn.UseVisualStyleBackColor = true;
+            this.btneliminarcolumn.Click += new System.EventHandler(this.btneliminarcolumn_Click);
             // 
             // btneliminartabla
             // 
-            this.btneliminartabla.Location = new System.Drawing.Point(224, 342);
+            this.btneliminartabla.Location = new System.Drawing.Point(249, 284);
             this.btneliminartabla.Name = "btneliminartabla";
             this.btneliminartabla.Size = new System.Drawing.Size(100, 23);
             this.btneliminartabla.TabIndex = 39;
             this.btneliminartabla.Text = "Eliminar Tabla";
             this.btneliminartabla.UseVisualStyleBackColor = true;
+            this.btneliminartabla.Click += new System.EventHandler(this.btneliminartabla_Click);
             // 
             // Crear
             // 
@@ -310,7 +303,6 @@
             this.Controls.Add(this.btneliminarcolumn);
             this.Controls.Add(this.cmbnombrecolum);
             this.Controls.Add(this.label2);
-            this.Controls.Add(this.btnllenardtg);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.dtgtablasdedic);
             this.Controls.Add(this.cmbnombretabla);
@@ -367,7 +359,6 @@
         private System.Windows.Forms.ComboBox cmbnombretabla;
         private System.Windows.Forms.DataGridView dtgtablasdedic;
         private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.Button btnllenardtg;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.ComboBox cmbnombrecolum;
         private System.Windows.Forms.Button btneliminarcolumn;

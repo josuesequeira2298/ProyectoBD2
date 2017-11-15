@@ -295,6 +295,7 @@ namespace Presentacion
         public void seleccionardtgtablas()
         {
             cmbnombretabla.Text = dtgtablas.CurrentRow.Cells[1].Value.ToString();
+            txtnombretabla.Text = dtgtablas.CurrentRow.Cells[1].Value.ToString();
         }
 
         private void dataGridView1_CellContentClick(object sender, DataGridViewCellEventArgs e)

@@ -58,8 +58,58 @@ namespace Datos
             }
             return false;
         }
+        public bool agregartablaentera(string nombretabla, string nombrecolumna, string tipodato)
+        {
+            bool agregandotablas;
+            bool agregandotabla02;
 
+            agregandotabla02 = conect.ejecutarInsert("insert into Tablas (Nombre) values ('" + nombretabla + "')");
+            agregandotablas = conect.ejecutarInsert("create table "+nombretabla+"("+nombrecolumna+" "+tipodato+")");
+            if (agregandotablas)
+            {
+                return true;
+            }
+            return false;
+        }
+        public bool agregarcolumnaidentity(string nombretabla, string nombrecolumna, string tipodato, string inicioide, string finide)
+        {
+            bool agregandotablas;
+            bool agregandotabla02;
 
+            agregandotabla02 = conect.ejecutarInsert("UPDATE Tablas SET Numero_Columnas = (Numero_Columnas+1)where Nombre = '" + nombretabla + "'");
+            agregandotablas = conect.ejecutarInsert("alter table "+nombretabla+" add "+nombrecolumna+" "+tipodato+" identity("+inicioide+","+finide+");");
+            if (agregandotablas)
+            {
+                return true;
+            }
+            return false;
+        }
+        public bool agregarcolumna(string nombretabla, string nombrecolumna, string tipodato, string tama)
+        {
+            bool agregandotablas;
+            bool agregandotabla02;
+
+            agregandotabla02 = conect.ejecutarInsert("UPDATE Tablas SET Numero_Columnas = (Numero_Columnas+1)where Nombre = '"+nombretabla+"'");
+            agregandotablas = conect.ejecutarInsert("alter table "+nombretabla+" add "+nombrecolumna+" "+tipodato+"("+tama+");");
+            if (agregandotablas)
+            {
+                return true;
+            }
+            return false;
+        }
+        public bool agregarcolumnaentera(string nombretabla, string nombrecolumna, string tipodato)
+        {
+            bool agregandotablas;
+            bool agregandotabla02;
+
+            agregandotabla02 = conect.ejecutarInsert("UPDATE Tablas SET Numero_Columnas = (Numero_Columnas+1)where Nombre = '" + nombretabla + "'");
+            agregandotablas = conect.ejecutarInsert("alter table " + nombretabla + " add " + nombrecolumna + " " + tipodato + "");
+            if (agregandotablas)
+            {
+                return true;
+            }
+            return false;
+        }
 
     }
 

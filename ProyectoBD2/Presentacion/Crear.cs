@@ -89,7 +89,7 @@ namespace Presentacion
                         {
                             if (cmbdato01.Text == "INT")
                             {
-                                agregar.agregartablaidentity(txtnombretabla.Text, txtnombrecolumna.Text, cmbdato01.Text,txtideini.Text,txtidefin.Text);
+                                agregar.agregartablaidentity(txtnombretabla.Text, txtnombrecolumna.Text, cmbdato01.Text, txtideini.Text, txtidefin.Text);
                             }
                             else
                             {
@@ -98,7 +98,15 @@ namespace Presentacion
                         }
                         else
                         {
-                            agregar.agregartabla(txtnombretabla.Text, txtnombrecolumna.Text, cmbdato01.Text, txttama01.Text);
+                            if (cmbdato01.Text == "INT")
+                            {
+                                agregar.agregartablaentera(txtnombretabla.Text, txtnombrecolumna.Text, cmbdato01.Text);
+                            }
+                            else
+                            {
+                                agregar.agregartabla(txtnombretabla.Text, txtnombrecolumna.Text, cmbdato01.Text, txttama01.Text);
+                            }
+
                         }
                     }
                     else
@@ -117,7 +125,7 @@ namespace Presentacion
             }
         }
 
-        public void limpiar()
+        public void limpiarTodo()
         {
             txttama01.Text = " ";
             txtnombretabla.Text = " ";
@@ -130,18 +138,69 @@ namespace Presentacion
 
         private void btnagregarcolum_Click(object sender, EventArgs e)
         {
-            
+            agregarcolumna();
+            ConsultarTablas();
+            limpiar();
         }
 
         private void brnlimpiar_Click(object sender, EventArgs e)
         {
-            limpiar();
+            limpiarTodo();
         }
-
+        private void limpiar()
+        {
+            txttama01.Text = " ";
+            txtnombrecolumna.Text = " ";
+            txtideini.Text = " ";
+            txtidefin.Text = " ";
+            llenarcombo();
+            chkidentity.Checked = false;
+        }
         private void btnrefrescar_Click(object sender, EventArgs e)
         {
             ConsultarTablas();
             llenarcombo();
+        }
+        private void agregarcolumna()
+        {
+            Logica.Creartabla agregar = new Logica.Creartabla();
+            try
+            {
+                if (txtnombretabla.Text != " ")
+                {
+                    if (txtnombrecolumna.Text != " ")
+                    {
+                        if (chkidentity.Checked)
+                        {
+                            MessageBox.Show("Función Identity solo disponible al crear la primera columna para este IDE");
+                        }
+                        else
+                        {
+                            if (cmbdato01.Text == "INT")
+                            {
+                                agregar.agregarcolumnaentera(txtnombretabla.Text, txtnombrecolumna.Text, cmbdato01.Text);
+                            }
+                            else
+                            {
+                                agregar.agregarcolumna(txtnombretabla.Text, txtnombrecolumna.Text, cmbdato01.Text, txttama01.Text);
+                            }
+
+                        }
+                    }
+                    else
+                    {
+                        MessageBox.Show("Sin Nombre de Columna");
+                    }
+                }
+                else
+                {
+                    MessageBox.Show("Sin Nombre de Tabla");
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Error Desconocido (" + ex.ToString() + ")");
+            }
         }
     }
 }

@@ -87,24 +87,27 @@ namespace Presentacion
                     {
                         if (chkidentity.Checked)
                         {
-                            if (cmbdato01.Text == "INT")
+                            if (cmbdato01.Text == "INT" || cmbdato01.Text == "DECIMAL")
                             {
                                 agregar.agregartablaidentity(txtnombretabla.Text, txtnombrecolumna.Text, cmbdato01.Text, txtideini.Text, txtidefin.Text);
+                                MessageBox.Show("Tabla " + txtnombretabla.Text + " y columna "+txtnombrecolumna.Text+" agregadas correctamente");
                             }
                             else
                             {
-                                MessageBox.Show("La función Identity solo funciona con datos enteros (INT)");
+                                MessageBox.Show("La función Identity solo funciona con datos enteros (INT o DOUBLE)");
                             }
                         }
                         else
                         {
-                            if (cmbdato01.Text == "INT")
+                            if (cmbdato01.Text == "INT" || cmbdato01.Text == "DECIMAL" || cmbdato01.Text == "BIT" || cmbdato01.Text == "DATETIME" || cmbdato01.Text == "DATE")
                             {
                                 agregar.agregartablaentera(txtnombretabla.Text, txtnombrecolumna.Text, cmbdato01.Text);
+                                MessageBox.Show("Tabla " + txtnombretabla.Text + " y columna " + txtnombrecolumna.Text + " agregadas correctamente");
                             }
                             else
                             {
                                 agregar.agregartabla(txtnombretabla.Text, txtnombrecolumna.Text, cmbdato01.Text, txttama01.Text);
+                                MessageBox.Show("Tabla " + txtnombretabla.Text + " y columna " + txtnombrecolumna.Text + " agregadas correctamente");
                             }
 
                         }
@@ -176,13 +179,15 @@ namespace Presentacion
                         }
                         else
                         {
-                            if (cmbdato01.Text == "INT")
+                            if (cmbdato01.Text == "INT" || cmbdato01.Text == "DECIMAL" || cmbdato01.Text == "BIT" || cmbdato01.Text == "DATETIME" || cmbdato01.Text == "DATE")
                             {
                                 agregar.agregarcolumnaentera(txtnombretabla.Text, txtnombrecolumna.Text, cmbdato01.Text);
+                                MessageBox.Show("Columna " + txtnombrecolumna.Text + " agregada correctamente");
                             }
                             else
                             {
                                 agregar.agregarcolumna(txtnombretabla.Text, txtnombrecolumna.Text, cmbdato01.Text, txttama01.Text);
+                                MessageBox.Show("Columna " + txtnombrecolumna.Text + " agregada correctamente");
                             }
 
                         }

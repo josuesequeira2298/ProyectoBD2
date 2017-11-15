@@ -125,6 +125,7 @@ namespace Presentacion
             txtideini.Text = " ";
             txtidefin.Text = " ";
             llenarcombo();
+            chkidentity.Checked = false;
         }
 
         private void btnagregarcolum_Click(object sender, EventArgs e)

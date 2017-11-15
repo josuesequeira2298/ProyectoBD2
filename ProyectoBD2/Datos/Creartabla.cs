@@ -45,6 +45,19 @@ namespace Datos
             }
             return false;
         }
+        public bool agregartabla(string nombretabla, string nombrecolumna, string tipodato, string tama)
+        {
+            bool agregandotablas;
+            bool agregandotabla02;
+
+            agregandotabla02 = conect.ejecutarInsert("insert into Tablas (Nombre) values ('" + nombretabla + "')");
+            agregandotablas = conect.ejecutarInsert("create table "+nombretabla+"("+nombrecolumna+" "+tipodato+"("+tama+"));");
+            if (agregandotablas)
+            {
+                return true;
+            }
+            return false;
+        }
 
 
 

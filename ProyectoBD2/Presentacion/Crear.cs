@@ -98,7 +98,7 @@ namespace Presentacion
                         }
                         else
                         {
-
+                            agregar.agregartabla(txtnombretabla.Text, txtnombrecolumna.Text, cmbdato01.Text, txttama01.Text);
                         }
                     }
                     else

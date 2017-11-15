@@ -45,6 +45,8 @@
             this.txtidefin = new System.Windows.Forms.TextBox();
             this.brnlimpiar = new System.Windows.Forms.Button();
             this.btnrefrescar = new System.Windows.Forms.Button();
+            this.chkdefault = new System.Windows.Forms.CheckBox();
+            this.txtdefault = new System.Windows.Forms.TextBox();
             ((System.ComponentModel.ISupportInitialize)(this.dtgtablas)).BeginInit();
             this.SuspendLayout();
             // 
@@ -146,7 +148,7 @@
             // 
             // btnagregarcolum
             // 
-            this.btnagregarcolum.Location = new System.Drawing.Point(249, 110);
+            this.btnagregarcolum.Location = new System.Drawing.Point(249, 123);
             this.btnagregarcolum.Name = "btnagregarcolum";
             this.btnagregarcolum.Size = new System.Drawing.Size(100, 23);
             this.btnagregarcolum.TabIndex = 24;
@@ -198,11 +200,30 @@
             this.btnrefrescar.UseVisualStyleBackColor = true;
             this.btnrefrescar.Click += new System.EventHandler(this.btnrefrescar_Click);
             // 
+            // chkdefault
+            // 
+            this.chkdefault.AutoSize = true;
+            this.chkdefault.Location = new System.Drawing.Point(16, 140);
+            this.chkdefault.Name = "chkdefault";
+            this.chkdefault.Size = new System.Drawing.Size(60, 17);
+            this.chkdefault.TabIndex = 30;
+            this.chkdefault.Text = "Default";
+            this.chkdefault.UseVisualStyleBackColor = true;
+            // 
+            // txtdefault
+            // 
+            this.txtdefault.Location = new System.Drawing.Point(82, 138);
+            this.txtdefault.Name = "txtdefault";
+            this.txtdefault.Size = new System.Drawing.Size(62, 20);
+            this.txtdefault.TabIndex = 31;
+            // 
             // Crear
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(799, 281);
+            this.Controls.Add(this.txtdefault);
+            this.Controls.Add(this.chkdefault);
             this.Controls.Add(this.btnrefrescar);
             this.Controls.Add(this.brnlimpiar);
             this.Controls.Add(this.txtidefin);
@@ -248,5 +269,7 @@
         private System.Windows.Forms.TextBox txtidefin;
         private System.Windows.Forms.Button brnlimpiar;
         private System.Windows.Forms.Button btnrefrescar;
+        private System.Windows.Forms.CheckBox chkdefault;
+        private System.Windows.Forms.TextBox txtdefault;
     }
 }

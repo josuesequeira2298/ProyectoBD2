@@ -90,26 +90,41 @@ namespace Presentacion
                             if (cmbdato01.Text == "INT" || cmbdato01.Text == "DECIMAL")
                             {
                                 agregar.agregartablaidentity(txtnombretabla.Text, txtnombrecolumna.Text, cmbdato01.Text, txtideini.Text, txtidefin.Text);
-                                MessageBox.Show("Tabla " + txtnombretabla.Text + " y columna "+txtnombrecolumna.Text+" agregadas correctamente");
+                                MessageBox.Show("Tabla " + txtnombretabla.Text + " y columna " + txtnombrecolumna.Text + " agregadas correctamente");
                             }
                             else
                             {
-                                MessageBox.Show("La función Identity solo funciona con datos enteros (INT o DOUBLE)");
+                                MessageBox.Show("La función Identity solo funciona con datos numericos (INT o DOUBLE)");
                             }
                         }
                         else
                         {
-                            if (cmbdato01.Text == "INT" || cmbdato01.Text == "DECIMAL" || cmbdato01.Text == "BIT" || cmbdato01.Text == "DATETIME" || cmbdato01.Text == "DATE")
+                            if (chkdefault.Checked)
                             {
-                                agregar.agregartablaentera(txtnombretabla.Text, txtnombrecolumna.Text, cmbdato01.Text);
-                                MessageBox.Show("Tabla " + txtnombretabla.Text + " y columna " + txtnombrecolumna.Text + " agregadas correctamente");
+                                if(cmbdato01.Text == "INT" || cmbdato01.Text == "DECIMAL" || cmbdato01.Text == "BIT" || cmbdato01.Text == "DATETIME" || cmbdato01.Text == "DATE")
+                                {
+                                    agregar.agregartabkaenteradef(txtnombretabla.Text, txtnombrecolumna.Text, cmbdato01.Text, txtdefault.Text);
+                                    MessageBox.Show("Tabla " + txtnombretabla.Text + " y columna " + txtnombrecolumna.Text + " agregadas correctamente");
+                                }
+                                else
+                                {
+                                    agregar.agregartabladef(txtnombretabla.Text,txtnombrecolumna.Text,cmbdato01.Text,txttama01.Text,txtdefault.Text);
+                                    MessageBox.Show("Tabla " + txtnombretabla.Text + " y columna " + txtnombrecolumna.Text + " agregadas correctamente");
+                                }
                             }
                             else
                             {
-                                agregar.agregartabla(txtnombretabla.Text, txtnombrecolumna.Text, cmbdato01.Text, txttama01.Text);
-                                MessageBox.Show("Tabla " + txtnombretabla.Text + " y columna " + txtnombrecolumna.Text + " agregadas correctamente");
+                                if (cmbdato01.Text == "INT" || cmbdato01.Text == "DECIMAL" || cmbdato01.Text == "BIT" || cmbdato01.Text == "DATETIME" || cmbdato01.Text == "DATE")
+                                {
+                                    agregar.agregartablaentera(txtnombretabla.Text, txtnombrecolumna.Text, cmbdato01.Text);
+                                    MessageBox.Show("Tabla " + txtnombretabla.Text + " y columna " + txtnombrecolumna.Text + " agregadas correctamente");
+                                }
+                                else
+                                {
+                                    agregar.agregartabla(txtnombretabla.Text, txtnombrecolumna.Text, cmbdato01.Text, txttama01.Text);
+                                    MessageBox.Show("Tabla " + txtnombretabla.Text + " y columna " + txtnombrecolumna.Text + " agregadas correctamente");
+                                }
                             }
-
                         }
                     }
                     else
@@ -122,9 +137,9 @@ namespace Presentacion
                     MessageBox.Show("Sin Nombre de Tabla");
                 }
             }
-            catch (Exception ex)
+            catch
             {
-                MessageBox.Show("Error Desconocido (" + ex.ToString() + ")");
+                MessageBox.Show("Error de sintaxis, favor revisar");
             }
         }
 
@@ -158,6 +173,8 @@ namespace Presentacion
             txtidefin.Text = " ";
             llenarcombo();
             chkidentity.Checked = false;
+            chkdefault.Checked = false;
+            txtdefault.Text = " ";
         }
         private void btnrefrescar_Click(object sender, EventArgs e)
         {
@@ -179,17 +196,31 @@ namespace Presentacion
                         }
                         else
                         {
-                            if (cmbdato01.Text == "INT" || cmbdato01.Text == "DECIMAL" || cmbdato01.Text == "BIT" || cmbdato01.Text == "DATETIME" || cmbdato01.Text == "DATE")
+                            if (chkdefault.Checked)
                             {
-                                agregar.agregarcolumnaentera(txtnombretabla.Text, txtnombrecolumna.Text, cmbdato01.Text);
-                                MessageBox.Show("Columna " + txtnombrecolumna.Text + " agregada correctamente");
-                            }
-                            else
+                                if(cmbdato01.Text == "INT" || cmbdato01.Text == "DECIMAL" || cmbdato01.Text == "BIT" || cmbdato01.Text == "DATETIME" || cmbdato01.Text == "DATE")
+                                {
+                                    agregar.agregarcolumnaenteradefa(txtnombretabla.Text,txtnombrecolumna.Text,cmbdato01.Text,txtdefault.Text);
+                                    MessageBox.Show("Columna " + txtnombrecolumna.Text + " agregada correctamente");
+                                }
+                                else
+                                {
+                                    agregar.agregarcolumnadefa(txtnombretabla.Text,txtnombrecolumna.Text,cmbdato01.Text,txttama01.Text,txtdefault.Text);
+                                    MessageBox.Show("Columna " + txtnombrecolumna.Text + " agregada correctamente");
+                                }
+                            }else
                             {
-                                agregar.agregarcolumna(txtnombretabla.Text, txtnombrecolumna.Text, cmbdato01.Text, txttama01.Text);
-                                MessageBox.Show("Columna " + txtnombrecolumna.Text + " agregada correctamente");
+                                if (cmbdato01.Text == "INT" || cmbdato01.Text == "DECIMAL" || cmbdato01.Text == "BIT" || cmbdato01.Text == "DATETIME" || cmbdato01.Text == "DATE")
+                                {
+                                    agregar.agregarcolumnaentera(txtnombretabla.Text, txtnombrecolumna.Text, cmbdato01.Text);
+                                    MessageBox.Show("Columna " + txtnombrecolumna.Text + " agregada correctamente");
+                                }
+                                else
+                                {
+                                    agregar.agregarcolumna(txtnombretabla.Text, txtnombrecolumna.Text, cmbdato01.Text, txttama01.Text);
+                                    MessageBox.Show("Columna " + txtnombrecolumna.Text + " agregada correctamente");
+                                }
                             }
-
                         }
                     }
                     else
@@ -202,9 +233,9 @@ namespace Presentacion
                     MessageBox.Show("Sin Nombre de Tabla");
                 }
             }
-            catch (Exception ex)
+            catch
             {
-                MessageBox.Show("Error Desconocido (" + ex.ToString() + ")");
+                MessageBox.Show("Error de sintaxis, favor revisar");
             }
         }
     }

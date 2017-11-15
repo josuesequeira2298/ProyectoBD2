@@ -31,6 +31,14 @@ namespace Logica
         {
             return new Datos.Creartabla().agregartablaentera(nombretabla, nombrecolumna, tipodato);
         }
+        public bool agregartabkaenteradef(string nombretabla, string nombrecolumna, string tipodato, string defal)
+        {
+            return new Datos.Creartabla().agregartabkaenteradef(nombretabla,nombrecolumna,tipodato,defal);
+        }
+        public bool agregartabladef(string nombretabla, string nombrecolumna, string tipodato, string tama, string def)
+        {
+            return new Datos.Creartabla().agregartabladef(nombretabla,nombrecolumna,tipodato,tama,def);
+        }
         public bool agregarcolumnaidentity(string nombretabla, string nombrecolumna, string tipodato, string inicioide, string finide)
         {
             return new Datos.Creartabla().agregarcolumnaidentity(nombretabla, nombrecolumna, tipodato, inicioide, finide);
@@ -42,6 +50,14 @@ namespace Logica
         public bool agregarcolumnaentera(string nombretabla, string nombrecolumna, string tipodato)
         {
             return new Datos.Creartabla().agregarcolumnaentera(nombretabla, nombrecolumna, tipodato);
+        }
+        public bool agregarcolumnadefa(string nombretabla, string nombrecolumna, string tipodato, string tama, string defa)
+        {
+            return new Datos.Creartabla().agregarcolumnadefa(nombretabla, nombrecolumna, tipodato, tama, defa);
+        }
+        public bool agregarcolumnaenteradefa(string nombretabla, string nombrecolumna, string tipodato, string defa)
+        {
+            return new Datos.Creartabla().agregarcolumnaenteradefa(nombretabla, nombrecolumna, tipodato, defa);
         }
     }
 }

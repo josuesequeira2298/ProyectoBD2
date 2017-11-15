@@ -37,10 +37,11 @@ namespace Datos
             bool agregandotablas;
             bool agregandotabla02;
 
-            agregandotabla02 = conect.ejecutarInsert("insert into Tablas (Nombre) values ('"+nombretabla+"')");
+            
             agregandotablas = conect.ejecutarInsert("create table "+nombretabla+"("+nombrecolumna+" "+tipodato+" identity ("+inicioide+","+finide+"))");
             if (agregandotablas)
             {
+                agregandotabla02 = conect.ejecutarInsert("insert into Tablas (Nombre) values ('" + nombretabla + "')");
                 return true;
             }
             return false;
@@ -50,10 +51,11 @@ namespace Datos
             bool agregandotablas;
             bool agregandotabla02;
 
-            agregandotabla02 = conect.ejecutarInsert("insert into Tablas (Nombre) values ('" + nombretabla + "')");
+            
             agregandotablas = conect.ejecutarInsert("create table "+nombretabla+"("+nombrecolumna+" "+tipodato+"("+tama+"));");
             if (agregandotablas)
             {
+                agregandotabla02 = conect.ejecutarInsert("insert into Tablas (Nombre) values ('" + nombretabla + "')");
                 return true;
             }
             return false;
@@ -63,10 +65,39 @@ namespace Datos
             bool agregandotablas;
             bool agregandotabla02;
 
-            agregandotabla02 = conect.ejecutarInsert("insert into Tablas (Nombre) values ('" + nombretabla + "')");
+
             agregandotablas = conect.ejecutarInsert("create table "+nombretabla+"("+nombrecolumna+" "+tipodato+")");
             if (agregandotablas)
             {
+                agregandotabla02 = conect.ejecutarInsert("insert into Tablas (Nombre) values ('" + nombretabla + "')");
+                return true;
+            }
+            return false;
+        }
+        public bool agregartabkaenteradef(string nombretabla, string nombrecolumna, string tipodato, string defal)
+        {
+            bool agregandotablas;
+            bool agregandotabla02;
+
+
+            agregandotablas = conect.ejecutarInsert("create table "+nombretabla+" ("+nombrecolumna+" "+tipodato+" default "+defal+")");
+            if (agregandotablas)
+            {
+                agregandotabla02 = conect.ejecutarInsert("insert into Tablas (Nombre) values ('" + nombretabla + "')");
+                return true;
+            }
+            return false;
+        }
+        public bool agregartabladef(string nombretabla, string nombrecolumna, string tipodato, string tama, string def)
+        {
+            bool agregandotablas;
+            bool agregandotabla02;
+
+
+            agregandotablas = conect.ejecutarInsert("create table "+nombretabla+" ("+nombrecolumna+" "+tipodato+"("+tama+") default '"+def+"')");
+            if (agregandotablas)
+            {
+                agregandotabla02 = conect.ejecutarInsert("insert into Tablas (Nombre) values ('" + nombretabla + "')");
                 return true;
             }
             return false;
@@ -76,10 +107,11 @@ namespace Datos
             bool agregandotablas;
             bool agregandotabla02;
 
-            agregandotabla02 = conect.ejecutarInsert("UPDATE Tablas SET Numero_Columnas = (Numero_Columnas+1)where Nombre = '" + nombretabla + "'");
+
             agregandotablas = conect.ejecutarInsert("alter table "+nombretabla+" add "+nombrecolumna+" "+tipodato+" identity("+inicioide+","+finide+");");
             if (agregandotablas)
             {
+                agregandotabla02 = conect.ejecutarInsert("UPDATE Tablas SET Numero_Columnas = (Numero_Columnas+1)where Nombre = '" + nombretabla + "'");
                 return true;
             }
             return false;
@@ -89,10 +121,11 @@ namespace Datos
             bool agregandotablas;
             bool agregandotabla02;
 
-            agregandotabla02 = conect.ejecutarInsert("UPDATE Tablas SET Numero_Columnas = (Numero_Columnas+1)where Nombre = '"+nombretabla+"'");
+
             agregandotablas = conect.ejecutarInsert("alter table "+nombretabla+" add "+nombrecolumna+" "+tipodato+"("+tama+");");
             if (agregandotablas)
             {
+                agregandotabla02 = conect.ejecutarInsert("UPDATE Tablas SET Numero_Columnas = (Numero_Columnas+1)where Nombre = '" + nombretabla + "'");
                 return true;
             }
             return false;
@@ -102,10 +135,39 @@ namespace Datos
             bool agregandotablas;
             bool agregandotabla02;
 
-            agregandotabla02 = conect.ejecutarInsert("UPDATE Tablas SET Numero_Columnas = (Numero_Columnas+1)where Nombre = '" + nombretabla + "'");
+
             agregandotablas = conect.ejecutarInsert("alter table " + nombretabla + " add " + nombrecolumna + " " + tipodato + "");
             if (agregandotablas)
             {
+                agregandotabla02 = conect.ejecutarInsert("UPDATE Tablas SET Numero_Columnas = (Numero_Columnas+1)where Nombre = '" + nombretabla + "'");
+                return true;
+            }
+            return false;
+        }
+        public bool agregarcolumnadefa(string nombretabla, string nombrecolumna, string tipodato, string tama, string defa)
+        {
+            bool agregandotablas;
+            bool agregandotabla02;
+
+
+            agregandotablas = conect.ejecutarInsert("alter table "+nombretabla+" add "+nombrecolumna+" "+tipodato+"("+tama+") default '"+defa+"'");
+            if (agregandotablas)
+            {
+                agregandotabla02 = conect.ejecutarInsert("UPDATE Tablas SET Numero_Columnas = (Numero_Columnas+1)where Nombre = '" + nombretabla + "'");
+                return true;
+            }
+            return false;
+        }
+        public bool agregarcolumnaenteradefa(string nombretabla, string nombrecolumna, string tipodato,string defa)
+        {
+            bool agregandotablas;
+            bool agregandotabla02;
+
+
+            agregandotablas = conect.ejecutarInsert("alter table "+nombretabla+" add "+nombrecolumna+" "+tipodato+" default "+defa+"");
+            if (agregandotablas)
+            {
+                agregandotabla02 = conect.ejecutarInsert("UPDATE Tablas SET Numero_Columnas = (Numero_Columnas+1)where Nombre = '" + nombretabla + "'");
                 return true;
             }
             return false;

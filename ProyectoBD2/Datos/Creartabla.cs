@@ -10,6 +10,8 @@ namespace Datos
 {
     public class Creartabla
     {
+        Conexion conect = new Conexion();
+        Conexion consultar = new Conexion();
 
         public DataTable ConsultarTablas()
         {
@@ -28,40 +30,26 @@ namespace Datos
             DtDatos = conectar.ejecutar("select * from tipodato");
             return DtDatos;
 
-            //    try
-            //    {
-
-            //        SqlDataReader dr;
-            //        Conectar(true);
-            //        objComando = new SqlCommand();
-            //        objComando.Connection = objConexion;
-            //        objComando.CommandTimeout = 0;
-            //        objComando.CommandType = CommandType.Text;
-            //        objComando.CommandText = "select Nombre from tipodato";
-
-            //        listadolistas = new List<listas>();
-
-            //        dr = objComando.ExecuteReader();
-            //        while (dr.Read())
-            //        {
-            //            listas objlistas = new listas();
-            //            objlistas.Datos = dr.GetString(1);
-            //            listadolistas.Add(objlistas);
-            //        }
-
-            //    }
-            //    catch(Exception ex)
-            //    {
-            //        ex.ToString();
-            //    }
-            //    datos = listadolistas;
-            //    return datos;
-
         }
 
-            
+        public bool agregartablaidentity(string nombretabla, string nombrecolumna, string tipodato, string inicioide, string finide)
+        {
+            bool agregandotablas;
+            bool agregandotabla02;
+
+            agregandotabla02 = conect.ejecutarInsert("insert into Tablas (Nombre) values ('"+nombretabla+"')");
+            agregandotablas = conect.ejecutarInsert("create table "+nombretabla+"("+nombrecolumna+" "+tipodato+" identity ("+inicioide+","+finide+"))");
+            if (agregandotablas)
+            {
+                return true;
             }
-
+            return false;
         }
-    
+
+
+
+    }
+
+}
+
 

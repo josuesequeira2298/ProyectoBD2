@@ -32,7 +32,7 @@
             this.labelnombre = new System.Windows.Forms.Label();
             this.txtnombretabla = new System.Windows.Forms.TextBox();
             this.labelcolumnas = new System.Windows.Forms.Label();
-            this.txtdato01 = new System.Windows.Forms.TextBox();
+            this.txtnombrecolumna = new System.Windows.Forms.TextBox();
             this.cmbdato01 = new System.Windows.Forms.ComboBox();
             this.txttama01 = new System.Windows.Forms.TextBox();
             this.dtgtablas = new System.Windows.Forms.DataGridView();
@@ -40,6 +40,11 @@
             this.lbtipodato = new System.Windows.Forms.Label();
             this.lbtamaño = new System.Windows.Forms.Label();
             this.btnagregarcolum = new System.Windows.Forms.Button();
+            this.chkidentity = new System.Windows.Forms.CheckBox();
+            this.txtideini = new System.Windows.Forms.TextBox();
+            this.txtidefin = new System.Windows.Forms.TextBox();
+            this.brnlimpiar = new System.Windows.Forms.Button();
+            this.btnrefrescar = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.dtgtablas)).BeginInit();
             this.SuspendLayout();
             // 
@@ -78,12 +83,12 @@
             this.labelcolumnas.TabIndex = 3;
             this.labelcolumnas.Text = "Columnas";
             // 
-            // txtdato01
+            // txtnombrecolumna
             // 
-            this.txtdato01.Location = new System.Drawing.Point(16, 83);
-            this.txtdato01.Name = "txtdato01";
-            this.txtdato01.Size = new System.Drawing.Size(100, 20);
-            this.txtdato01.TabIndex = 4;
+            this.txtnombrecolumna.Location = new System.Drawing.Point(16, 83);
+            this.txtnombrecolumna.Name = "txtnombrecolumna";
+            this.txtnombrecolumna.Size = new System.Drawing.Size(100, 20);
+            this.txtnombrecolumna.TabIndex = 4;
             // 
             // cmbdato01
             // 
@@ -141,18 +146,68 @@
             // 
             // btnagregarcolum
             // 
-            this.btnagregarcolum.Location = new System.Drawing.Point(16, 110);
+            this.btnagregarcolum.Location = new System.Drawing.Point(249, 110);
             this.btnagregarcolum.Name = "btnagregarcolum";
             this.btnagregarcolum.Size = new System.Drawing.Size(100, 23);
             this.btnagregarcolum.TabIndex = 24;
             this.btnagregarcolum.Text = "Agregar Columna";
             this.btnagregarcolum.UseVisualStyleBackColor = true;
+            this.btnagregarcolum.Click += new System.EventHandler(this.btnagregarcolum_Click);
+            // 
+            // chkidentity
+            // 
+            this.chkidentity.AutoSize = true;
+            this.chkidentity.Location = new System.Drawing.Point(16, 114);
+            this.chkidentity.Name = "chkidentity";
+            this.chkidentity.Size = new System.Drawing.Size(60, 17);
+            this.chkidentity.TabIndex = 25;
+            this.chkidentity.Text = "Identity";
+            this.chkidentity.UseVisualStyleBackColor = true;
+            // 
+            // txtideini
+            // 
+            this.txtideini.Location = new System.Drawing.Point(82, 112);
+            this.txtideini.Name = "txtideini";
+            this.txtideini.Size = new System.Drawing.Size(28, 20);
+            this.txtideini.TabIndex = 26;
+            // 
+            // txtidefin
+            // 
+            this.txtidefin.Location = new System.Drawing.Point(116, 112);
+            this.txtidefin.Name = "txtidefin";
+            this.txtidefin.Size = new System.Drawing.Size(28, 20);
+            this.txtidefin.TabIndex = 27;
+            // 
+            // brnlimpiar
+            // 
+            this.brnlimpiar.Location = new System.Drawing.Point(381, 255);
+            this.brnlimpiar.Name = "brnlimpiar";
+            this.brnlimpiar.Size = new System.Drawing.Size(75, 23);
+            this.brnlimpiar.TabIndex = 28;
+            this.brnlimpiar.Text = "Limpiar";
+            this.brnlimpiar.UseVisualStyleBackColor = true;
+            this.brnlimpiar.Click += new System.EventHandler(this.brnlimpiar_Click);
+            // 
+            // btnrefrescar
+            // 
+            this.btnrefrescar.Location = new System.Drawing.Point(712, 255);
+            this.btnrefrescar.Name = "btnrefrescar";
+            this.btnrefrescar.Size = new System.Drawing.Size(75, 23);
+            this.btnrefrescar.TabIndex = 29;
+            this.btnrefrescar.Text = "Refrescar";
+            this.btnrefrescar.UseVisualStyleBackColor = true;
+            this.btnrefrescar.Click += new System.EventHandler(this.btnrefrescar_Click);
             // 
             // Crear
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(799, 281);
+            this.Controls.Add(this.btnrefrescar);
+            this.Controls.Add(this.brnlimpiar);
+            this.Controls.Add(this.txtidefin);
+            this.Controls.Add(this.txtideini);
+            this.Controls.Add(this.chkidentity);
             this.Controls.Add(this.btnagregarcolum);
             this.Controls.Add(this.lbtamaño);
             this.Controls.Add(this.lbtipodato);
@@ -160,7 +215,7 @@
             this.Controls.Add(this.dtgtablas);
             this.Controls.Add(this.txttama01);
             this.Controls.Add(this.cmbdato01);
-            this.Controls.Add(this.txtdato01);
+            this.Controls.Add(this.txtnombrecolumna);
             this.Controls.Add(this.labelcolumnas);
             this.Controls.Add(this.txtnombretabla);
             this.Controls.Add(this.labelnombre);
@@ -180,7 +235,7 @@
         private System.Windows.Forms.Label labelnombre;
         private System.Windows.Forms.TextBox txtnombretabla;
         private System.Windows.Forms.Label labelcolumnas;
-        private System.Windows.Forms.TextBox txtdato01;
+        private System.Windows.Forms.TextBox txtnombrecolumna;
         private System.Windows.Forms.ComboBox cmbdato01;
         private System.Windows.Forms.TextBox txttama01;
         private System.Windows.Forms.DataGridView dtgtablas;
@@ -188,5 +243,10 @@
         private System.Windows.Forms.Label lbtipodato;
         private System.Windows.Forms.Label lbtamaño;
         private System.Windows.Forms.Button btnagregarcolum;
+        private System.Windows.Forms.CheckBox chkidentity;
+        private System.Windows.Forms.TextBox txtideini;
+        private System.Windows.Forms.TextBox txtidefin;
+        private System.Windows.Forms.Button brnlimpiar;
+        private System.Windows.Forms.Button btnrefrescar;
     }
 }

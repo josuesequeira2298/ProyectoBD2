@@ -19,5 +19,10 @@ namespace Logica
             Datos.Creartabla Datos = new Datos.Creartabla();
             return Datos.llenarcombo();
         }
+        public bool agregartablaidentity(string nombretabla, string nombrecolumna, string tipodato, string inicioide, string finide)
+        {
+            return new Datos.Creartabla().agregartablaidentity(nombretabla, nombrecolumna, tipodato, inicioide, finide);
+        }
+
     }
 }

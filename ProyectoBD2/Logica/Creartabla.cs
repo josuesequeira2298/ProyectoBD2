@@ -19,6 +19,17 @@ namespace Logica
             Datos.Creartabla Datos = new Datos.Creartabla();
             return Datos.llenarcombo();
         }
+        public DataTable llenarcombotabla()
+        {
+            Datos.Creartabla datos = new Datos.Creartabla();
+            return datos.llenarcombotabla();
+        }
+
+        public DataTable llenarcombocolumna(string nombretabla)
+        {
+            Datos.Creartabla datos = new Datos.Creartabla();
+            return datos.llenarcombocolumna(nombretabla);
+        }
         public bool agregartablaidentity(string nombretabla, string nombrecolumna, string tipodato, string inicioide, string finide)
         {
             return new Datos.Creartabla().agregartablaidentity(nombretabla, nombrecolumna, tipodato, inicioide, finide);

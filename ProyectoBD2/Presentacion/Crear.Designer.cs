@@ -47,7 +47,16 @@
             this.btnrefrescar = new System.Windows.Forms.Button();
             this.chkdefault = new System.Windows.Forms.CheckBox();
             this.txtdefault = new System.Windows.Forms.TextBox();
+            this.cmbnombretabla = new System.Windows.Forms.ComboBox();
+            this.dtgtablasdedic = new System.Windows.Forms.DataGridView();
+            this.label1 = new System.Windows.Forms.Label();
+            this.btnllenardtg = new System.Windows.Forms.Button();
+            this.label2 = new System.Windows.Forms.Label();
+            this.cmbnombrecolum = new System.Windows.Forms.ComboBox();
+            this.btneliminarcolumn = new System.Windows.Forms.Button();
+            this.btneliminartabla = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.dtgtablas)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dtgtablasdedic)).BeginInit();
             this.SuspendLayout();
             // 
             // btncreartabla
@@ -118,6 +127,7 @@
             this.dtgtablas.Name = "dtgtablas";
             this.dtgtablas.Size = new System.Drawing.Size(406, 234);
             this.dtgtablas.TabIndex = 20;
+            this.dtgtablas.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dtgtablas_CellContentClick_1);
             // 
             // lbnombre
             // 
@@ -217,11 +227,93 @@
             this.txtdefault.Size = new System.Drawing.Size(62, 20);
             this.txtdefault.TabIndex = 31;
             // 
+            // cmbnombretabla
+            // 
+            this.cmbnombretabla.FormattingEnabled = true;
+            this.cmbnombretabla.Location = new System.Drawing.Point(116, 286);
+            this.cmbnombretabla.Name = "cmbnombretabla";
+            this.cmbnombretabla.Size = new System.Drawing.Size(121, 21);
+            this.cmbnombretabla.TabIndex = 32;
+            this.cmbnombretabla.Click += new System.EventHandler(this.cmbnombretabla_Click);
+            // 
+            // dtgtablasdedic
+            // 
+            this.dtgtablasdedic.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dtgtablasdedic.Location = new System.Drawing.Point(381, 284);
+            this.dtgtablasdedic.Name = "dtgtablasdedic";
+            this.dtgtablasdedic.Size = new System.Drawing.Size(406, 150);
+            this.dtgtablasdedic.TabIndex = 33;
+            this.dtgtablasdedic.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView1_CellContentClick);
+            // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Location = new System.Drawing.Point(13, 289);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(74, 13);
+            this.label1.TabIndex = 34;
+            this.label1.Text = "Nombre Tabla";
+            // 
+            // btnllenardtg
+            // 
+            this.btnllenardtg.Location = new System.Drawing.Point(249, 284);
+            this.btnllenardtg.Name = "btnllenardtg";
+            this.btnllenardtg.Size = new System.Drawing.Size(75, 23);
+            this.btnllenardtg.TabIndex = 35;
+            this.btnllenardtg.Text = "Llamar Tabla";
+            this.btnllenardtg.UseVisualStyleBackColor = true;
+            this.btnllenardtg.Click += new System.EventHandler(this.btnllenardtg_Click);
+            // 
+            // label2
+            // 
+            this.label2.AutoSize = true;
+            this.label2.Location = new System.Drawing.Point(13, 318);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(88, 13);
+            this.label2.TabIndex = 36;
+            this.label2.Text = "Nombre Columna";
+            // 
+            // cmbnombrecolum
+            // 
+            this.cmbnombrecolum.FormattingEnabled = true;
+            this.cmbnombrecolum.Location = new System.Drawing.Point(116, 315);
+            this.cmbnombrecolum.Name = "cmbnombrecolum";
+            this.cmbnombrecolum.Size = new System.Drawing.Size(121, 21);
+            this.cmbnombrecolum.TabIndex = 37;
+            this.cmbnombrecolum.SelectedIndexChanged += new System.EventHandler(this.cmbnombrecolum_SelectedIndexChanged);
+            this.cmbnombrecolum.Click += new System.EventHandler(this.cmbnombrecolum_Click);
+            // 
+            // btneliminarcolumn
+            // 
+            this.btneliminarcolumn.Location = new System.Drawing.Point(249, 313);
+            this.btneliminarcolumn.Name = "btneliminarcolumn";
+            this.btneliminarcolumn.Size = new System.Drawing.Size(75, 23);
+            this.btneliminarcolumn.TabIndex = 38;
+            this.btneliminarcolumn.Text = "Eliminar Columna";
+            this.btneliminarcolumn.UseVisualStyleBackColor = true;
+            // 
+            // btneliminartabla
+            // 
+            this.btneliminartabla.Location = new System.Drawing.Point(224, 342);
+            this.btneliminartabla.Name = "btneliminartabla";
+            this.btneliminartabla.Size = new System.Drawing.Size(100, 23);
+            this.btneliminartabla.TabIndex = 39;
+            this.btneliminartabla.Text = "Eliminar Tabla";
+            this.btneliminartabla.UseVisualStyleBackColor = true;
+            // 
             // Crear
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(799, 281);
+            this.ClientSize = new System.Drawing.Size(799, 447);
+            this.Controls.Add(this.btneliminartabla);
+            this.Controls.Add(this.btneliminarcolumn);
+            this.Controls.Add(this.cmbnombrecolum);
+            this.Controls.Add(this.label2);
+            this.Controls.Add(this.btnllenardtg);
+            this.Controls.Add(this.label1);
+            this.Controls.Add(this.dtgtablasdedic);
+            this.Controls.Add(this.cmbnombretabla);
             this.Controls.Add(this.txtdefault);
             this.Controls.Add(this.chkdefault);
             this.Controls.Add(this.btnrefrescar);
@@ -242,9 +334,10 @@
             this.Controls.Add(this.labelnombre);
             this.Controls.Add(this.btncreartabla);
             this.Name = "Crear";
-            this.Text = "Prueba";
+            this.Text = "Crear Tablas y Columnas";
             this.Load += new System.EventHandler(this.Crear_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dtgtablas)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dtgtablasdedic)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -271,5 +364,13 @@
         private System.Windows.Forms.Button btnrefrescar;
         private System.Windows.Forms.CheckBox chkdefault;
         private System.Windows.Forms.TextBox txtdefault;
+        private System.Windows.Forms.ComboBox cmbnombretabla;
+        private System.Windows.Forms.DataGridView dtgtablasdedic;
+        private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.Button btnllenardtg;
+        private System.Windows.Forms.Label label2;
+        private System.Windows.Forms.ComboBox cmbnombrecolum;
+        private System.Windows.Forms.Button btneliminarcolumn;
+        private System.Windows.Forms.Button btneliminartabla;
     }
 }

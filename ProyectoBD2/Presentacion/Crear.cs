@@ -20,9 +20,10 @@ namespace Presentacion
 
         private void Crear_Load(object sender, EventArgs e)
         {
-
+            
             ConsultarTablas();
             llenarcombo();
+            
         }
 
         public void llenarcombo()
@@ -31,20 +32,49 @@ namespace Presentacion
             {
                 Logica.Creartabla datos = new Logica.Creartabla();
                 DataTable dtDatos = new DataTable();
-
-
+      
                 dtDatos = datos.llenarcombo();
                 cmbdato01.DisplayMember = "Nombre";
                 cmbdato01.ValueMember = "ID";
                 cmbdato01.DataSource = dtDatos;
-
             }
             catch (Exception ex)
             {
                 MessageBox.Show(ex.ToString());
             }
+        }
+        public void llenarcombotablas()
+        {
+            try
+            {
+                Logica.Creartabla datos = new Logica.Creartabla();
+                DataTable dttablas = new DataTable();
 
+                dttablas = datos.llenarcombotabla();
+                cmbnombretabla.DisplayMember = "Nombre";
+                cmbnombretabla.ValueMember = "id";
+                cmbnombretabla.DataSource = dttablas;
 
+            }catch(Exception ex)
+            {
+                MessageBox.Show(ex.ToString());
+            }
+        }
+        public void llenarcombocolumnas()
+        {
+            try
+            {
+                Logica.Creartabla datos = new Logica.Creartabla();
+                DataTable dttablas = new DataTable();
+
+                dttablas = datos.llenarcombocolumna(cmbnombretabla.Text);
+                cmbnombrecolum.DisplayMember = "NombreColumna";
+                cmbnombrecolum.ValueMember = "id";
+                cmbnombrecolum.DataSource = dttablas;
+            }catch(Exception ex)
+            {
+                MessageBox.Show(ex.ToString());
+            }
         }
 
         public void ConsultarTablas()
@@ -152,6 +182,8 @@ namespace Presentacion
             txtidefin.Text = " ";
             llenarcombo();
             chkidentity.Checked = false;
+            cmbnombretabla.Text = " ";
+            cmbnombrecolum.Text = " ";
         }
 
         private void btnagregarcolum_Click(object sender, EventArgs e)
@@ -175,6 +207,8 @@ namespace Presentacion
             chkidentity.Checked = false;
             chkdefault.Checked = false;
             txtdefault.Text = " ";
+            cmbnombretabla.Text = " ";
+            cmbnombrecolum.Text = " ";
         }
         private void btnrefrescar_Click(object sender, EventArgs e)
         {
@@ -237,6 +271,40 @@ namespace Presentacion
             {
                 MessageBox.Show("Error de sintaxis, favor revisar");
             }
+        }
+
+        private void dtgtablas_CellContentClick_1(object sender, DataGridViewCellEventArgs e)
+        {
+            seleccionardtgtablas();
+        }
+        public void seleccionardtgtablas()
+        {
+            cmbnombretabla.Text = dtgtablas.CurrentRow.Cells[1].Value.ToString();
+        }
+
+        private void dataGridView1_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+
+        }
+
+        private void btnllenardtg_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void cmbnombrecolum_SelectedIndexChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void cmbnombrecolum_Click(object sender, EventArgs e)
+        {
+            llenarcombocolumnas();
+        }
+
+        private void cmbnombretabla_Click(object sender, EventArgs e)
+        {
+            llenarcombotablas();
         }
     }
 }

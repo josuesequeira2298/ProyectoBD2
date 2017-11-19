@@ -272,15 +272,24 @@ namespace Presentacion
                                 }
                             }else
                             {
-                                if (cmbdato01.Text == "INT" || cmbdato01.Text == "DECIMAL" || cmbdato01.Text == "BIT" || cmbdato01.Text == "DATETIME" || cmbdato01.Text == "DATE")
+                                if (cmbdato01.Text == "INT" || cmbdato01.Text == "DECIMAL" || cmbdato01.Text == "BIT")
                                 {
                                     agregar.agregarcolumnaentera(txtnombretabla.Text, txtnombrecolumna.Text, cmbdato01.Text);
                                     MessageBox.Show("Columna " + txtnombrecolumna.Text + " agregada correctamente");
                                 }
                                 else
                                 {
-                                    agregar.agregarcolumna(txtnombretabla.Text, txtnombrecolumna.Text, cmbdato01.Text, txttama01.Text);
-                                    MessageBox.Show("Columna " + txtnombrecolumna.Text + " agregada correctamente");
+                                    if(cmbdato01.Text == "DATETIME" || cmbdato01.Text == "DATE")
+                                    {
+                                        agregar.agregarcolumnaentera(txtnombretabla.Text, txtnombrecolumna.Text, cmbdato01.Text);
+                                        MessageBox.Show("Columna " + txtnombrecolumna.Text + " agregada correctamente");
+                                    }
+                                    else
+                                    {
+                                        agregar.agregarcolumna(txtnombretabla.Text, txtnombrecolumna.Text, cmbdato01.Text, txttama01.Text);
+                                        MessageBox.Show("Columna " + txtnombrecolumna.Text + " agregada correctamente");
+                                    }
+                                    
                                 }
                             }
                         }

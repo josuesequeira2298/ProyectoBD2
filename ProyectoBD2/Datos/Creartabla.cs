@@ -197,7 +197,7 @@ namespace Datos
             bool agregandotabla02;
             bool agregandotabla03;
 
-            agregandotablas = conect.ejecutarInsert("alter table " + nombretabla + " add " + nombrecolumna + " " + tipodato + "(" + tama + ");");
+            agregandotablas = conect.ejecutarInsert("alter table " + nombretabla + " add " + nombrecolumna + " " + tipodato + "(" + tama + ") default '';");
             if (agregandotablas)
             {
                 agregandotabla03 = conect.ejecutarInsert("insert into Columnas (NombreTabla, NombreColumna) values ('" + nombretabla + "','" + nombrecolumna + "')");
@@ -212,11 +212,27 @@ namespace Datos
             bool agregandotabla02;
             bool agregandotabla03;
 
-            agregandotablas = conect.ejecutarInsert("alter table " + nombretabla + " add " + nombrecolumna + " " + tipodato + "");
+            agregandotablas = conect.ejecutarInsert("alter table "+nombretabla+" add "+nombrecolumna+" "+tipodato+" default '0'");
             if (agregandotablas)
             {
                 agregandotabla03 = conect.ejecutarInsert("insert into Columnas (NombreTabla, NombreColumna) values ('" + nombretabla + "','" + nombrecolumna + "')");
-                agregandotabla02 = conect.ejecutarInsert("UPDATE Tablas SET Numero_Columnas = (Numero_Columnas+1)where Nombre = '" + nombretabla + "'");
+                agregandotabla02 = conect.ejecutarInsert("UPDATE Tablas SET Numero_Columnas = (Numero_Columnas+1) where Nombre = '" + nombretabla + "'");
+                return true;
+            }
+            return false;
+        }
+
+        public bool agregarcolumnaFECHA(string nombretabla, string nombrecolumna, string tipodato)
+        {
+            bool agregandotablas;
+            bool agregandotabla02;
+            bool agregandotabla03;
+
+            agregandotablas = conect.ejecutarInsert("alter table "+nombretabla+" add "+nombrecolumna+" "+tipodato+" default '20170101'");
+            if (agregandotablas)
+            {
+                agregandotabla03 = conect.ejecutarInsert("insert into Columnas (NombreTabla, NombreColumna) values ('" + nombretabla + "','" + nombrecolumna + "')");
+                agregandotabla02 = conect.ejecutarInsert("UPDATE Tablas SET Numero_Columnas = (Numero_Columnas+1) where Nombre = '" + nombretabla + "'");
                 return true;
             }
             return false;

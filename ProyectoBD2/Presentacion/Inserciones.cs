@@ -20,6 +20,7 @@ namespace Presentacion
         private void Inserciones_Load(object sender, EventArgs e)
         {
             ConsultarTablas();
+            llenarcombotablas();
         }
 
         private void btninsert01_Click(object sender, EventArgs e)
@@ -54,6 +55,24 @@ namespace Presentacion
 
             dttablas = consulta.ConsultarTablas();
             dtgtabla.DataSource = dttablas;
+        }
+        public void llenarcombotablas()
+        {
+            try
+            {
+                Logica.Creartabla datos = new Logica.Creartabla();
+                DataTable dttablas = new DataTable();
+
+                dttablas = datos.llenarcombotabla();
+                cmbtablas.DisplayMember = "Nombre";
+                cmbtablas.ValueMember = "id";
+                cmbtablas.DataSource = dttablas;
+
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.ToString());
+            }
         }
 
         private void cmbtablas_SelectedIndexChanged(object sender, EventArgs e)

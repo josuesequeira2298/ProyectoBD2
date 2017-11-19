@@ -70,6 +70,12 @@
     <Compile Include="Form1.Designer.cs">
       <DependentUpon>Form1.cs</DependentUpon>
     </Compile>
+    <Compile Include="Inserciones.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Inserciones.Designer.cs">
+      <DependentUpon>Inserciones.cs</DependentUpon>
+    </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Crear.cs">
@@ -78,6 +84,9 @@
     <Compile Include="Crear.Designer.cs">
       <DependentUpon>Crear.cs</DependentUpon>
     </Compile>
+    <EmbeddedResource Include="Inserciones.resx">
+      <DependentUpon>Inserciones.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
       <LastGenOutput>Resources.Designer.cs</LastGenOutput>

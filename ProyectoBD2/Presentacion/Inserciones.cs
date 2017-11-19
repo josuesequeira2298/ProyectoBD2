@@ -20,7 +20,7 @@ namespace Presentacion
         private void Inserciones_Load(object sender, EventArgs e)
         {
             ConsultarTablas();
-            llenarcombotablas();
+            
         }
 
         private void btninsert01_Click(object sender, EventArgs e)
@@ -77,8 +77,26 @@ namespace Presentacion
 
         private void cmbtablas_SelectedIndexChanged(object sender, EventArgs e)
         {
-
+            consultarcolumnas();
+        }
+        private void consultarcolumnas()
+        {
+            try
+            {
+                Logica.Creartabla consulta = new Logica.Creartabla();
+                DataTable dtcolumnas = new DataTable();
+                dtcolumnas = consulta.consultarcolumnas(cmbtablas.Text);
+                dtgtabla.DataSource = dtcolumnas;
+            }
+            catch
+            {
+                MessageBox.Show("La tabla no existe");
+            }
         }
 
+        private void cmbtablas_Click(object sender, EventArgs e)
+        {
+            llenarcombotablas();
+        }
     }
 }

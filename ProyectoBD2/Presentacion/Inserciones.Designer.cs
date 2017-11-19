@@ -100,6 +100,7 @@
             // 
             // dtgtabla
             // 
+            this.dtgtabla.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.dtgtabla.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dtgtabla.Location = new System.Drawing.Point(355, 13);
             this.dtgtabla.Name = "dtgtabla";
@@ -114,6 +115,7 @@
             this.cmbtablas.Size = new System.Drawing.Size(121, 21);
             this.cmbtablas.TabIndex = 9;
             this.cmbtablas.SelectedIndexChanged += new System.EventHandler(this.cmbtablas_SelectedIndexChanged);
+            this.cmbtablas.Click += new System.EventHandler(this.cmbtablas_Click);
             // 
             // btndelete
             // 

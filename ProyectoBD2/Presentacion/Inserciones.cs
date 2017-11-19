@@ -40,7 +40,7 @@ namespace Presentacion
             {
                 MessageBox.Show("Error de sintaxis, favor revisar");
             }
-            
+
         }
 
         private void btnllamar_Click(object sender, EventArgs e)
@@ -74,11 +74,5 @@ namespace Presentacion
                 MessageBox.Show(ex.ToString());
             }
         }
-
-        private void cmbtablas_SelectedIndexChanged(object sender, EventArgs e)
-        {
-
-        }
-
     }
 }

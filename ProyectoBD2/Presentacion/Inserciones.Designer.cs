@@ -44,6 +44,7 @@
             this.comboBox2 = new System.Windows.Forms.ComboBox();
             this.comboBox3 = new System.Windows.Forms.ComboBox();
             this.label4 = new System.Windows.Forms.Label();
+            this.btnactualizar = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.dtgtabla)).BeginInit();
             this.SuspendLayout();
             // 
@@ -113,7 +114,7 @@
             this.cmbtablas.Name = "cmbtablas";
             this.cmbtablas.Size = new System.Drawing.Size(121, 21);
             this.cmbtablas.TabIndex = 9;
-            this.cmbtablas.SelectedIndexChanged += new System.EventHandler(this.cmbtablas_SelectedIndexChanged);
+            //this.cmbtablas.SelectedIndexChanged += new System.EventHandler(this.cmbtablas_SelectedIndexChanged);
             // 
             // btndelete
             // 
@@ -183,11 +184,22 @@
             this.label4.TabIndex = 23;
             this.label4.Text = "Tablas";
             // 
+            // btnactualizar
+            // 
+            this.btnactualizar.Location = new System.Drawing.Point(613, 205);
+            this.btnactualizar.Name = "btnactualizar";
+            this.btnactualizar.Size = new System.Drawing.Size(75, 23);
+            this.btnactualizar.TabIndex = 24;
+            this.btnactualizar.Text = "Actualizar";
+            this.btnactualizar.UseVisualStyleBackColor = true;
+            //this.btnactualizar.Click += new System.EventHandler(this.btnactualizar_Click);
+            // 
             // Inserciones
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(702, 238);
+            this.Controls.Add(this.btnactualizar);
             this.Controls.Add(this.label4);
             this.Controls.Add(this.comboBox3);
             this.Controls.Add(this.comboBox2);
@@ -231,5 +243,6 @@
         private System.Windows.Forms.ComboBox comboBox2;
         private System.Windows.Forms.ComboBox comboBox3;
         private System.Windows.Forms.Label label4;
+        private System.Windows.Forms.Button btnactualizar;
     }
 }

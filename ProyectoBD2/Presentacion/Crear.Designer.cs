@@ -51,6 +51,9 @@
             this.cmbnombrecolum = new System.Windows.Forms.ComboBox();
             this.btneliminarcolumn = new System.Windows.Forms.Button();
             this.btneliminartabla = new System.Windows.Forms.Button();
+            this.txtideini = new System.Windows.Forms.TextBox();
+            this.txtidefin = new System.Windows.Forms.TextBox();
+            this.chkidentity = new System.Windows.Forms.CheckBox();
             ((System.ComponentModel.ISupportInitialize)(this.dtgtablas)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dtgtablasdedic)).BeginInit();
             this.SuspendLayout();
@@ -267,11 +270,41 @@
             this.btneliminartabla.UseVisualStyleBackColor = true;
             this.btneliminartabla.Click += new System.EventHandler(this.btneliminartabla_Click);
             // 
+            // txtideini
+            // 
+            this.txtideini.Location = new System.Drawing.Point(82, 196);
+            this.txtideini.Name = "txtideini";
+            this.txtideini.Size = new System.Drawing.Size(100, 20);
+            this.txtideini.TabIndex = 40;
+            this.txtideini.Visible = false;
+            // 
+            // txtidefin
+            // 
+            this.txtidefin.Location = new System.Drawing.Point(249, 196);
+            this.txtidefin.Name = "txtidefin";
+            this.txtidefin.Size = new System.Drawing.Size(100, 20);
+            this.txtidefin.TabIndex = 41;
+            this.txtidefin.Visible = false;
+            // 
+            // chkidentity
+            // 
+            this.chkidentity.AutoSize = true;
+            this.chkidentity.Location = new System.Drawing.Point(16, 231);
+            this.chkidentity.Name = "chkidentity";
+            this.chkidentity.Size = new System.Drawing.Size(77, 17);
+            this.chkidentity.TabIndex = 42;
+            this.chkidentity.Text = "chkidentity";
+            this.chkidentity.UseVisualStyleBackColor = true;
+            this.chkidentity.Visible = false;
+            // 
             // Crear
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(799, 447);
+            this.Controls.Add(this.chkidentity);
+            this.Controls.Add(this.txtidefin);
+            this.Controls.Add(this.txtideini);
             this.Controls.Add(this.btneliminartabla);
             this.Controls.Add(this.btneliminarcolumn);
             this.Controls.Add(this.cmbnombrecolum);
@@ -330,5 +363,8 @@
         private System.Windows.Forms.ComboBox cmbnombrecolum;
         private System.Windows.Forms.Button btneliminarcolumn;
         private System.Windows.Forms.Button btneliminartabla;
+        private System.Windows.Forms.TextBox txtideini;
+        private System.Windows.Forms.TextBox txtidefin;
+        private System.Windows.Forms.CheckBox chkidentity;
     }
 }

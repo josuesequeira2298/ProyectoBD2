@@ -79,6 +79,10 @@ namespace Logica
         {
             return new Datos.Creartabla().agregarcolumnaentera(nombretabla, nombrecolumna, tipodato);
         }
+        public bool agregarcolumnaFECHA(string nombretabla, string nombrecolumna, string tipodato)
+        {
+            return new Datos.Creartabla().agregarcolumnaFECHA(nombretabla, nombrecolumna, tipodato);
+        }
         public bool agregarcolumnadefa(string nombretabla, string nombrecolumna, string tipodato, string tama, string defa)
         {
             return new Datos.Creartabla().agregarcolumnadefa(nombretabla, nombrecolumna, tipodato, tama, defa);

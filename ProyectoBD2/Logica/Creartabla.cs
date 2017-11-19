@@ -46,6 +46,11 @@ namespace Logica
         {
             return new Datos.Creartabla().agregartablaidentity(nombretabla, nombrecolumna, tipodato, inicioide, finide);
         }
+
+        public bool agregartabla02(string nombretabla)
+        {
+            return new Datos.Creartabla().agregartabla02(nombretabla);
+        }
         public bool agregartabla(string nombretabla, string nombrecolumna, string tipodato, string tama)
         {
             return new Datos.Creartabla().agregartabla(nombretabla, nombrecolumna, tipodato, tama);

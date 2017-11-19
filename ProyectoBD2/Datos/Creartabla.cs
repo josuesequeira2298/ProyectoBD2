@@ -83,6 +83,21 @@ namespace Datos
             }
             return false;
         }
+        public bool agregartabla02(string nombretabla)
+        {
+            bool agregandotablas;
+            bool agregandotabla02;
+            bool agregandotabla03;
+
+            agregandotablas = conect.ejecutarInsert("create table " + nombretabla + "(ID int identity (1,1))");
+            if (agregandotablas)
+            {
+                agregandotabla02 = conect.ejecutarInsert("insert into Tablas (Nombre) values ('" + nombretabla + "')");
+                agregandotabla03 = conect.ejecutarInsert("insert into Columnas (NombreTabla, NombreColumna) values ('" + nombretabla + "','ID')");
+                return true;
+            }
+            return false;
+        }
         public bool agregartablaidentity(string nombretabla, string nombrecolumna, string tipodato, string inicioide, string finide)
         {
             bool agregandotablas;

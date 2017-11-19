@@ -110,7 +110,7 @@ namespace Presentacion
 
         private void btncreartabla_Click(object sender, EventArgs e)
         {
-            agregartabla();
+            agregartabla2();
             ConsultarTablas();
             limpiar();
         }
@@ -120,6 +120,19 @@ namespace Presentacion
         private void cmbdato01_SelectedIndexChanged(object sender, EventArgs e)
         {
 
+        }
+        public void agregartabla2()
+        {
+            Logica.Creartabla agregar = new Logica.Creartabla();
+            try
+            {
+                agregar.agregartabla02(txtnombretabla.Text);
+                MessageBox.Show("Tabla " + txtnombretabla.Text + "  agregada correctamente");
+            }
+            catch
+            {
+                MessageBox.Show("Error de sintaxis, favor revisar");
+            }
         }
         public void agregartabla()
         {

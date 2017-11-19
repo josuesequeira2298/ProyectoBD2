@@ -66,15 +66,6 @@ namespace Presentacion
         {
         }
 
-        private void ToolBarToolStripMenuItem_Click(object sender, EventArgs e)
-        {
-            toolStrip.Visible = toolBarToolStripMenuItem.Checked;
-        }
-
-        private void StatusBarToolStripMenuItem_Click(object sender, EventArgs e)
-        {
-            statusStrip.Visible = statusBarToolStripMenuItem.Checked;
-        }
 
         private void CascadeToolStripMenuItem_Click(object sender, EventArgs e)
         {
@@ -102,6 +93,23 @@ namespace Presentacion
             {
                 childForm.Close();
             }
+        }
+
+        private void tablasToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void crearTablasYColumnasToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            Crear crear = new Crear();
+            crear.Show();
+        }
+
+        private void manipularDatosToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            Inserciones insertar = new Inserciones();
+            insertar.Show();
         }
     }
 }

@@ -17,6 +17,11 @@ namespace Presentacion
             InitializeComponent();
         }
 
+        private void Inserciones_Load(object sender, EventArgs e)
+        {
+            ConsultarTablas();
+        }
+
         private void btninsert01_Click(object sender, EventArgs e)
         {
             try
@@ -41,5 +46,20 @@ namespace Presentacion
         {
 
         }
+
+        public void ConsultarTablas()
+        {
+            Logica.Creartabla consulta = new Logica.Creartabla();
+            DataTable dttablas = new DataTable();
+
+            dttablas = consulta.ConsultarTablas();
+            dtgtabla.DataSource = dttablas;
+        }
+
+        private void cmbtablas_SelectedIndexChanged(object sender, EventArgs e)
+        {
+
+        }
+
     }
 }

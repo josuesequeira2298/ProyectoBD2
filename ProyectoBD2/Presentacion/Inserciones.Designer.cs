@@ -51,7 +51,7 @@
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(57, 12);
+            this.label1.Location = new System.Drawing.Point(56, 12);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(88, 13);
             this.label1.TabIndex = 0;
@@ -60,7 +60,7 @@
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(193, 13);
+            this.label2.Location = new System.Drawing.Point(183, 12);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(55, 13);
             this.label2.TabIndex = 1;
@@ -69,7 +69,7 @@
             // cmbcolumna01
             // 
             this.cmbcolumna01.FormattingEnabled = true;
-            this.cmbcolumna01.Location = new System.Drawing.Point(60, 28);
+            this.cmbcolumna01.Location = new System.Drawing.Point(59, 28);
             this.cmbcolumna01.Name = "cmbcolumna01";
             this.cmbcolumna01.Size = new System.Drawing.Size(121, 21);
             this.cmbcolumna01.TabIndex = 5;
@@ -77,7 +77,7 @@
             // 
             // txtdato01
             // 
-            this.txtdato01.Location = new System.Drawing.Point(196, 29);
+            this.txtdato01.Location = new System.Drawing.Point(186, 28);
             this.txtdato01.Name = "txtdato01";
             this.txtdato01.Size = new System.Drawing.Size(100, 20);
             this.txtdato01.TabIndex = 6;
@@ -94,7 +94,7 @@
             // 
             // btninsert01
             // 
-            this.btninsert01.Location = new System.Drawing.Point(302, 29);
+            this.btninsert01.Location = new System.Drawing.Point(292, 26);
             this.btninsert01.Name = "btninsert01";
             this.btninsert01.Size = new System.Drawing.Size(75, 23);
             this.btninsert01.TabIndex = 7;
@@ -106,15 +106,16 @@
             // 
             this.dtgtabla.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.dtgtabla.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dtgtabla.Location = new System.Drawing.Point(383, 15);
+            this.dtgtabla.Location = new System.Drawing.Point(373, 13);
             this.dtgtabla.Name = "dtgtabla";
             this.dtgtabla.Size = new System.Drawing.Size(335, 164);
             this.dtgtabla.TabIndex = 8;
+            this.dtgtabla.CellDoubleClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dtgtabla_CellDoubleClick);
             // 
             // cmbtablas
             // 
             this.cmbtablas.FormattingEnabled = true;
-            this.cmbtablas.Location = new System.Drawing.Point(439, 205);
+            this.cmbtablas.Location = new System.Drawing.Point(415, 185);
             this.cmbtablas.Name = "cmbtablas";
             this.cmbtablas.Size = new System.Drawing.Size(121, 21);
             this.cmbtablas.TabIndex = 25;
@@ -123,7 +124,7 @@
             // 
             // btndelete
             // 
-            this.btndelete.Location = new System.Drawing.Point(60, 93);
+            this.btndelete.Location = new System.Drawing.Point(59, 93);
             this.btndelete.Name = "btndelete";
             this.btndelete.Size = new System.Drawing.Size(75, 23);
             this.btndelete.TabIndex = 11;
@@ -133,7 +134,7 @@
             // 
             // btnupdate
             // 
-            this.btnupdate.Location = new System.Drawing.Point(302, 157);
+            this.btnupdate.Location = new System.Drawing.Point(292, 154);
             this.btnupdate.Name = "btnupdate";
             this.btnupdate.Size = new System.Drawing.Size(75, 23);
             this.btnupdate.TabIndex = 12;
@@ -144,7 +145,7 @@
             // cmbupdate
             // 
             this.cmbupdate.FormattingEnabled = true;
-            this.cmbupdate.Location = new System.Drawing.Point(60, 156);
+            this.cmbupdate.Location = new System.Drawing.Point(59, 156);
             this.cmbupdate.Name = "cmbupdate";
             this.cmbupdate.Size = new System.Drawing.Size(121, 21);
             this.cmbupdate.TabIndex = 16;
@@ -182,15 +183,16 @@
             // label4
             // 
             this.label4.AutoSize = true;
-            this.label4.Location = new System.Drawing.Point(394, 205);
+            this.label4.Location = new System.Drawing.Point(370, 188);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(39, 13);
             this.label4.TabIndex = 23;
             this.label4.Text = "Tablas";
+            this.label4.Click += new System.EventHandler(this.label4_Click);
             // 
             // btnconsultar
             // 
-            this.btnconsultar.Location = new System.Drawing.Point(566, 205);
+            this.btnconsultar.Location = new System.Drawing.Point(594, 183);
             this.btnconsultar.Name = "btnconsultar";
             this.btnconsultar.Size = new System.Drawing.Size(114, 23);
             this.btnconsultar.TabIndex = 24;
@@ -200,7 +202,7 @@
             // 
             // txtdato
             // 
-            this.txtdato.Location = new System.Drawing.Point(196, 157);
+            this.txtdato.Location = new System.Drawing.Point(186, 156);
             this.txtdato.Name = "txtdato";
             this.txtdato.Size = new System.Drawing.Size(100, 20);
             this.txtdato.TabIndex = 26;
@@ -228,7 +230,7 @@
             this.Controls.Add(this.label2);
             this.Controls.Add(this.label1);
             this.Name = "Inserciones";
-            this.Text = "Inserciones";
+            this.Text = "Manipular Datos";
             this.Load += new System.EventHandler(this.Inserciones_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dtgtabla)).EndInit();
             this.ResumeLayout(false);

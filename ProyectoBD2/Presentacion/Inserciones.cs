@@ -289,5 +289,18 @@ namespace Presentacion
         private void cmbupdate_TextChanged(object sender, EventArgs e)
         {
         }
+
+        private void dtgtabla_CellDoubleClick(object sender, DataGridViewCellEventArgs e)
+        {
+            cmbideliminar.Text = dtgtabla.CurrentRow.Cells[0].Value.ToString();
+            cmbidupdate.Text = dtgtabla.CurrentRow.Cells[0].Value.ToString();
+            //cmbupdate.Text = dtgtabla.CurrentRow.Cells[dtgtabla.CurrentCellAddress.Y].Value.ToString();
+            /*No usar metodo de llenado en proceso*/
+        }
+
+        private void label4_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }

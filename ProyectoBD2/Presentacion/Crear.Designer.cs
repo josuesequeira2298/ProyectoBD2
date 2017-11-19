@@ -272,7 +272,7 @@
             // 
             // txtideini
             // 
-            this.txtideini.Location = new System.Drawing.Point(82, 196);
+            this.txtideini.Location = new System.Drawing.Point(74, 430);
             this.txtideini.Name = "txtideini";
             this.txtideini.Size = new System.Drawing.Size(100, 20);
             this.txtideini.TabIndex = 40;
@@ -280,7 +280,7 @@
             // 
             // txtidefin
             // 
-            this.txtidefin.Location = new System.Drawing.Point(249, 196);
+            this.txtidefin.Location = new System.Drawing.Point(180, 430);
             this.txtidefin.Name = "txtidefin";
             this.txtidefin.Size = new System.Drawing.Size(100, 20);
             this.txtidefin.TabIndex = 41;
@@ -289,7 +289,7 @@
             // chkidentity
             // 
             this.chkidentity.AutoSize = true;
-            this.chkidentity.Location = new System.Drawing.Point(16, 231);
+            this.chkidentity.Location = new System.Drawing.Point(-1, 433);
             this.chkidentity.Name = "chkidentity";
             this.chkidentity.Size = new System.Drawing.Size(77, 17);
             this.chkidentity.TabIndex = 42;

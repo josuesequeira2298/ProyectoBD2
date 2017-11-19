@@ -29,6 +29,12 @@ namespace Logica
             return datos.llenarcombotabla();
         }
 
+        public DataTable llenarcomboid(string nombretabla)
+        {
+            Datos.Creartabla Datos = new Datos.Creartabla();
+            return Datos.llenarcomboid(nombretabla);
+        }
+
         public DataTable llenarcombocolumna(string nombretabla)
         {
             Datos.Creartabla datos = new Datos.Creartabla();
@@ -90,6 +96,21 @@ namespace Logica
         public bool agregarcolumnaenteradefa(string nombretabla, string nombrecolumna, string tipodato, string defa)
         {
             return new Datos.Creartabla().agregarcolumnaenteradefa(nombretabla, nombrecolumna, tipodato, defa);
+        }
+
+        public bool eliminarfilas(string nombretabla, string id)
+        {
+            return new Datos.Creartabla().eliminarfilas(nombretabla, id);
+        }
+
+        public bool update(string nombretabla, string nombreclumna, string dato, string id)
+        {
+            return new Datos.Creartabla().update(nombretabla, nombreclumna, dato, id);
+        }
+
+        public bool insert(string nombretabla, string nombreclumna, string dato)
+        {
+            return new Datos.Creartabla().insert(nombretabla, nombreclumna, dato);
         }
     }
 }

@@ -44,6 +44,13 @@ namespace Datos
             dttablas = conectar.ejecutar("select * from Tablas");
             return dttablas;
         }
+        public DataTable llenarcomboid(string nombretabla)
+        {
+            Datos.Conexion conectar = new Datos.Conexion();
+            DataTable dttablas;
+            dttablas = conectar.ejecutar("select ID from "+nombretabla+"");
+            return dttablas;
+        }
         public DataTable llenarcombocolumna(string nombretabla)
         {
             Datos.Conexion conectar = new Datos.Conexion();
@@ -263,6 +270,42 @@ namespace Datos
             {
                 agregandotabla03 = conect.ejecutarInsert("insert into Columnas (NombreTabla, NombreColumna) values ('" + nombretabla + "','" + nombrecolumna + "')");
                 agregandotabla02 = conect.ejecutarInsert("UPDATE Tablas SET Numero_Columnas = (Numero_Columnas+1)where Nombre = '" + nombretabla + "'");
+                return true;
+            }
+            return false;
+        }
+
+        public bool eliminarfilas(string nombretabla, string id)
+        {
+            bool eliminarfila;
+
+            eliminarfila = conect.ejecutarInsert("delete from " + nombretabla + " where ID = '" + id + "'");
+            if (eliminarfila)
+            {
+                return true;
+            }
+            return false;
+        }
+
+        public bool update(string nombretabla, string nombreclumna, string dato, string id)
+        {
+            bool updatetabla;
+
+            updatetabla = conect.ejecutarInsert("update " + nombretabla + " set  " + nombreclumna + " = '" + dato + "' where ID = '" + id + "'");
+            if (updatetabla)
+            {
+                return true;
+            }
+            return false;
+        }
+
+        public bool insert(string nombretabla, string nombreclumna, string dato)
+        {
+            bool insertar;
+
+            insertar = conect.ejecutarInsert("insert into " + nombretabla + " (" + nombreclumna + ") values ('" + dato + "')");
+            if (insertar)
+            {
                 return true;
             }
             return false;

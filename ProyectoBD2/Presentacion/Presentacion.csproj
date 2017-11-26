@@ -90,6 +90,12 @@
     <Compile Include="Crear.Designer.cs">
       <DependentUpon>Crear.cs</DependentUpon>
     </Compile>
+    <Compile Include="SelectDosTablas.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="SelectDosTablas.Designer.cs">
+      <DependentUpon>SelectDosTablas.cs</DependentUpon>
+    </Compile>
     <EmbeddedResource Include="Inserciones.resx">
       <DependentUpon>Inserciones.cs</DependentUpon>
     </EmbeddedResource>
@@ -107,6 +113,9 @@
     </Compile>
     <EmbeddedResource Include="Crear.resx">
       <DependentUpon>Crear.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="SelectDosTablas.resx">
+      <DependentUpon>SelectDosTablas.cs</DependentUpon>
     </EmbeddedResource>
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>

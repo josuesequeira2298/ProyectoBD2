@@ -119,8 +119,8 @@ namespace Presentacion
 
         private void dosTablasToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            //SelectDosTablas select2 = new SelectDosTablas();
-            //select2.show();
+            SelectDosTablas Select2 = new SelectDosTablas();
+            Select2.Show();
         }
     }
 }

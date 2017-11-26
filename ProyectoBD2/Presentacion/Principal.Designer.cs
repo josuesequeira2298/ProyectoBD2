@@ -30,10 +30,11 @@
         {
             this.components = new System.ComponentModel.Container();
             this.menuStrip = new System.Windows.Forms.MenuStrip();
-            this.statusStrip = new System.Windows.Forms.StatusStrip();
-            this.toolTip = new System.Windows.Forms.ToolTip(this.components);
             this.crearTablasYColumnasToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.manipularDatosToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.statusStrip = new System.Windows.Forms.StatusStrip();
+            this.toolTip = new System.Windows.Forms.ToolTip(this.components);
+            this.dosTablasToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.menuStrip.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -42,21 +43,13 @@
             this.menuStrip.ImageScalingSize = new System.Drawing.Size(20, 20);
             this.menuStrip.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.crearTablasYColumnasToolStripMenuItem,
-            this.manipularDatosToolStripMenuItem});
+            this.manipularDatosToolStripMenuItem,
+            this.dosTablasToolStripMenuItem});
             this.menuStrip.Location = new System.Drawing.Point(0, 0);
             this.menuStrip.Name = "menuStrip";
             this.menuStrip.Size = new System.Drawing.Size(632, 24);
             this.menuStrip.TabIndex = 0;
             this.menuStrip.Text = "MenuStrip";
-            // 
-            // statusStrip
-            // 
-            this.statusStrip.ImageScalingSize = new System.Drawing.Size(20, 20);
-            this.statusStrip.Location = new System.Drawing.Point(0, 431);
-            this.statusStrip.Name = "statusStrip";
-            this.statusStrip.Size = new System.Drawing.Size(632, 22);
-            this.statusStrip.TabIndex = 2;
-            this.statusStrip.Text = "StatusStrip";
             // 
             // crearTablasYColumnasToolStripMenuItem
             // 
@@ -72,6 +65,22 @@
             this.manipularDatosToolStripMenuItem.Text = "Manipular Datos";
             this.manipularDatosToolStripMenuItem.Click += new System.EventHandler(this.manipularDatosToolStripMenuItem_Click);
             // 
+            // statusStrip
+            // 
+            this.statusStrip.ImageScalingSize = new System.Drawing.Size(20, 20);
+            this.statusStrip.Location = new System.Drawing.Point(0, 431);
+            this.statusStrip.Name = "statusStrip";
+            this.statusStrip.Size = new System.Drawing.Size(632, 22);
+            this.statusStrip.TabIndex = 2;
+            this.statusStrip.Text = "StatusStrip";
+            // 
+            // dosTablasToolStripMenuItem
+            // 
+            this.dosTablasToolStripMenuItem.Name = "dosTablasToolStripMenuItem";
+            this.dosTablasToolStripMenuItem.Size = new System.Drawing.Size(75, 20);
+            this.dosTablasToolStripMenuItem.Text = "Dos Tablas";
+            this.dosTablasToolStripMenuItem.Click += new System.EventHandler(this.dosTablasToolStripMenuItem_Click);
+            // 
             // Principal
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -83,6 +92,7 @@
             this.MainMenuStrip = this.menuStrip;
             this.Name = "Principal";
             this.Text = "Principal";
+            this.Load += new System.EventHandler(this.Principal_Load);
             this.menuStrip.ResumeLayout(false);
             this.menuStrip.PerformLayout();
             this.ResumeLayout(false);
@@ -97,6 +107,7 @@
         private System.Windows.Forms.ToolTip toolTip;
         private System.Windows.Forms.ToolStripMenuItem crearTablasYColumnasToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem manipularDatosToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem dosTablasToolStripMenuItem;
     }
 }
 

@@ -130,5 +130,16 @@ namespace Presentacion
             }
 
         }
+
+        private void Principal_Load(object sender, EventArgs e)
+        {
+
+        }
+
+        private void dosTablasToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            SelectDosTablas Select2 = new SelectDosTablas();
+            Select2.Show();
+        }
     }
 }

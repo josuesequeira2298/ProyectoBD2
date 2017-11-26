@@ -111,5 +111,16 @@ namespace Presentacion
             Inserciones insertar = new Inserciones();
             insertar.Show();
         }
+
+        private void Principal_Load(object sender, EventArgs e)
+        {
+
+        }
+
+        private void dosTablasToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            //SelectDosTablas select2 = new SelectDosTablas();
+            //select2.show();
+        }
     }
 }

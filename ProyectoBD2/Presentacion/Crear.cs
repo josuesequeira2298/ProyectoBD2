@@ -132,13 +132,14 @@ namespace Presentacion
             try
             {
                 agregar.agregartabla02(txtnombretabla.Text);
+                lbtimestop.Text = DateTime.Now.ToLongTimeString();
                 MessageBox.Show("Tabla " + txtnombretabla.Text + "  agregada correctamente");
             }
             catch
             {
                 MessageBox.Show("Error de sintaxis, favor revisar");
             }
-            lbtimestop.Text = DateTime.Now.ToLongTimeString();
+            
             calcularTiempo();
         }
         public void agregartabla()
@@ -219,6 +220,8 @@ namespace Presentacion
             chkidentity.Checked = false;
             cmbnombretabla.Text = " ";
             cmbnombrecolum.Text = " ";
+            lbtimestar.Text = "";
+            lbtimestop.Text = "";
         }
 
         private void btnagregarcolum_Click(object sender, EventArgs e)
@@ -271,11 +274,13 @@ namespace Presentacion
                                 if(cmbdato01.Text == "INT" || cmbdato01.Text == "DECIMAL" || cmbdato01.Text == "BIT" || cmbdato01.Text == "DATETIME" || cmbdato01.Text == "DATE")
                                 {
                                     agregar.agregarcolumnaenteradefa(txtnombretabla.Text,txtnombrecolumna.Text,cmbdato01.Text,txtdefault.Text);
+                                    lbtimestop.Text = DateTime.Now.ToLongTimeString();
                                     MessageBox.Show("Columna " + txtnombrecolumna.Text + " agregada correctamente");
                                 }
                                 else
                                 {
                                     agregar.agregarcolumnadefa(txtnombretabla.Text,txtnombrecolumna.Text,cmbdato01.Text,txttama01.Text,txtdefault.Text);
+                                    lbtimestop.Text = DateTime.Now.ToLongTimeString();
                                     MessageBox.Show("Columna " + txtnombrecolumna.Text + " agregada correctamente");
                                 }
                             }else
@@ -283,6 +288,7 @@ namespace Presentacion
                                 if (cmbdato01.Text == "INT" || cmbdato01.Text == "DECIMAL" || cmbdato01.Text == "BIT")
                                 {
                                     agregar.agregarcolumnaentera(txtnombretabla.Text, txtnombrecolumna.Text, cmbdato01.Text);
+                                    lbtimestop.Text = DateTime.Now.ToLongTimeString();
                                     MessageBox.Show("Columna " + txtnombrecolumna.Text + " agregada correctamente");
                                 }
                                 else
@@ -290,11 +296,13 @@ namespace Presentacion
                                     if(cmbdato01.Text == "DATETIME" || cmbdato01.Text == "DATE")
                                     {
                                         agregar.agregarcolumnaentera(txtnombretabla.Text, txtnombrecolumna.Text, cmbdato01.Text);
+                                        lbtimestop.Text = DateTime.Now.ToLongTimeString();
                                         MessageBox.Show("Columna " + txtnombrecolumna.Text + " agregada correctamente");
                                     }
                                     else
                                     {
                                         agregar.agregarcolumna(txtnombretabla.Text, txtnombrecolumna.Text, cmbdato01.Text, txttama01.Text);
+                                        lbtimestop.Text = DateTime.Now.ToLongTimeString();
                                         MessageBox.Show("Columna " + txtnombrecolumna.Text + " agregada correctamente");
                                     }
                                     
@@ -316,7 +324,7 @@ namespace Presentacion
             {
                 MessageBox.Show("Error de sintaxis, favor revisar");
             }
-            lbtimestop.Text = DateTime.Now.ToLongTimeString();
+            
             calcularTiempo();
         }
 
@@ -363,13 +371,14 @@ namespace Presentacion
             try
             {
                 eliminar.eliminarcolumna(cmbnombretabla.Text, cmbnombrecolum.Text);
+                lbtimestop.Text = DateTime.Now.ToLongTimeString();
                 MessageBox.Show("Columna eliminada correctamente");
             }
             catch
             {
                 MessageBox.Show("Error de sintaxis, favor revisar");
             }
-            lbtimestop.Text = DateTime.Now.ToLongTimeString();
+            
             calcularTiempo();
         }
 
@@ -380,13 +389,14 @@ namespace Presentacion
             try
             {
                 eliminar.eliminartabla(cmbnombretabla.Text);
+                lbtimestop.Text = DateTime.Now.ToLongTimeString();
                 MessageBox.Show("Tabla eliminada correctamente");
             }
             catch
             {
                 MessageBox.Show("Error de sintaxis, favor revisar");
             }
-            lbtimestop.Text = DateTime.Now.ToLongTimeString();
+           
             calcularTiempo();
         }
 

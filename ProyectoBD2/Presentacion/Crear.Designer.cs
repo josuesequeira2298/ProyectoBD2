@@ -54,6 +54,9 @@
             this.txtideini = new System.Windows.Forms.TextBox();
             this.txtidefin = new System.Windows.Forms.TextBox();
             this.chkidentity = new System.Windows.Forms.CheckBox();
+            this.lbtimestar = new System.Windows.Forms.Label();
+            this.lbtimestop = new System.Windows.Forms.Label();
+            this.lbdiferencia = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.dtgtablas)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dtgtablasdedic)).BeginInit();
             this.SuspendLayout();
@@ -297,11 +300,44 @@
             this.chkidentity.UseVisualStyleBackColor = true;
             this.chkidentity.Visible = false;
             // 
+            // lbtimestar
+            // 
+            this.lbtimestar.AutoSize = true;
+            this.lbtimestar.Location = new System.Drawing.Point(13, 398);
+            this.lbtimestar.Name = "lbtimestar";
+            this.lbtimestar.Size = new System.Drawing.Size(35, 13);
+            this.lbtimestar.TabIndex = 44;
+            this.lbtimestar.Text = "label3";
+            this.lbtimestar.Visible = false;
+            // 
+            // lbtimestop
+            // 
+            this.lbtimestop.AutoSize = true;
+            this.lbtimestop.Location = new System.Drawing.Point(113, 398);
+            this.lbtimestop.Name = "lbtimestop";
+            this.lbtimestop.Size = new System.Drawing.Size(35, 13);
+            this.lbtimestop.TabIndex = 46;
+            this.lbtimestop.Text = "label4";
+            this.lbtimestop.Visible = false;
+            // 
+            // lbdiferencia
+            // 
+            this.lbdiferencia.AutoSize = true;
+            this.lbdiferencia.Location = new System.Drawing.Point(246, 398);
+            this.lbdiferencia.Name = "lbdiferencia";
+            this.lbdiferencia.Size = new System.Drawing.Size(35, 13);
+            this.lbdiferencia.TabIndex = 47;
+            this.lbdiferencia.Text = "label5";
+            this.lbdiferencia.Visible = false;
+            // 
             // Crear
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(799, 447);
+            this.Controls.Add(this.lbdiferencia);
+            this.Controls.Add(this.lbtimestop);
+            this.Controls.Add(this.lbtimestar);
             this.Controls.Add(this.chkidentity);
             this.Controls.Add(this.txtidefin);
             this.Controls.Add(this.txtideini);
@@ -366,5 +402,8 @@
         private System.Windows.Forms.TextBox txtideini;
         private System.Windows.Forms.TextBox txtidefin;
         private System.Windows.Forms.CheckBox chkidentity;
+        private System.Windows.Forms.Label lbtimestar;
+        private System.Windows.Forms.Label lbtimestop;
+        private System.Windows.Forms.Label lbdiferencia;
     }
 }

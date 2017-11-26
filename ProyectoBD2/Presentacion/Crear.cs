@@ -43,6 +43,10 @@ namespace Presentacion
                 MessageBox.Show(ex.ToString());
             }
         }
+        // This variable will be the loop counter.
+        private int counter;
+
+
         public void llenarcombotablas()
         {
             try
@@ -124,6 +128,7 @@ namespace Presentacion
         public void agregartabla2()
         {
             Logica.Creartabla agregar = new Logica.Creartabla();
+            lbtimestar.Text = DateTime.Now.ToLongTimeString();
             try
             {
                 agregar.agregartabla02(txtnombretabla.Text);
@@ -133,6 +138,8 @@ namespace Presentacion
             {
                 MessageBox.Show("Error de sintaxis, favor revisar");
             }
+            lbtimestop.Text = DateTime.Now.ToLongTimeString();
+            calcularTiempo();
         }
         public void agregartabla()
         {
@@ -246,6 +253,7 @@ namespace Presentacion
         private void agregarcolumna()
         {
             Logica.Creartabla agregar = new Logica.Creartabla();
+            lbtimestar.Text = DateTime.Now.ToLongTimeString();
             try
             {
                 if (txtnombretabla.Text != " ")
@@ -308,6 +316,8 @@ namespace Presentacion
             {
                 MessageBox.Show("Error de sintaxis, favor revisar");
             }
+            lbtimestop.Text = DateTime.Now.ToLongTimeString();
+            calcularTiempo();
         }
 
         private void dtgtablas_CellContentClick_1(object sender, DataGridViewCellEventArgs e)
@@ -349,6 +359,7 @@ namespace Presentacion
         private void eliminarcolumna()
         {
             Logica.Creartabla eliminar = new Logica.Creartabla();
+            lbtimestar.Text = DateTime.Now.ToLongTimeString();
             try
             {
                 eliminar.eliminarcolumna(cmbnombretabla.Text, cmbnombrecolum.Text);
@@ -358,11 +369,14 @@ namespace Presentacion
             {
                 MessageBox.Show("Error de sintaxis, favor revisar");
             }
+            lbtimestop.Text = DateTime.Now.ToLongTimeString();
+            calcularTiempo();
         }
 
         private void eliminartabla()
         {
             Logica.Creartabla eliminar = new Logica.Creartabla();
+            lbtimestar.Text = DateTime.Now.ToLongTimeString();
             try
             {
                 eliminar.eliminartabla(cmbnombretabla.Text);
@@ -371,6 +385,29 @@ namespace Presentacion
             catch
             {
                 MessageBox.Show("Error de sintaxis, favor revisar");
+            }
+            lbtimestop.Text = DateTime.Now.ToLongTimeString();
+            calcularTiempo();
+        }
+
+        private void calcularTiempo()
+        {
+            try
+            {
+                DateTime var1 = (DateTime.Parse(lbtimestar.Text));
+                string[] fecha = new string[3];
+                string temp = lbtimestop.Text;
+                fecha = temp.Split(':');
+                DateTime var2 = (DateTime.Parse(lbtimestop.Text));
+                var2 = new DateTime(var1.Year, var1.Month, var1.Day, Convert.ToInt32(fecha[0]), Convert.ToInt32(fecha[1]), Convert.ToInt32(fecha[2]));
+                TimeSpan dif = new TimeSpan();
+                dif = var2 - var1;
+                lbdiferencia.Text = dif.ToString();
+                MessageBox.Show("Tiempo demorado: " + lbdiferencia.Text);
+            }
+            catch 
+            {
+                MessageBox.Show("Error al calcular tiempo");
             }
         }
 
@@ -391,6 +428,29 @@ namespace Presentacion
         private void cmbnombretabla_SelectedIndexChanged(object sender, EventArgs e)
         {
             consultarcolumnas();
+        }
+
+        private void button1_Click_1(object sender, EventArgs e)
+        {
+            lbtimestar.Text = DateTime.Now.ToLongTimeString();
+        }
+
+        private void button2_Click(object sender, EventArgs e)
+        {
+            lbtimestop.Text = DateTime.Now.ToLongTimeString();
+        }
+
+        private void button3_Click(object sender, EventArgs e)
+        {
+            DateTime var1 = (DateTime.Parse(lbtimestar.Text));
+            string[] fecha = new string[3];
+            string temp = lbtimestop.Text;
+            fecha = temp.Split(':');
+            DateTime var2 = (DateTime.Parse(lbtimestop.Text));
+            var2 = new DateTime(var1.Year, var1.Month, var1.Day, Convert.ToInt32(fecha[0]), Convert.ToInt32(fecha[1]), Convert.ToInt32(fecha[2]));
+            TimeSpan dif = new TimeSpan();
+            dif = var2 - var1;
+            lbdiferencia.Text = dif.ToString();
         }
     }
 }

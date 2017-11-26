@@ -45,6 +45,9 @@
             this.label4 = new System.Windows.Forms.Label();
             this.btnconsultar = new System.Windows.Forms.Button();
             this.txtdato = new System.Windows.Forms.TextBox();
+            this.lbtimestar = new System.Windows.Forms.Label();
+            this.lbtimestop = new System.Windows.Forms.Label();
+            this.lbdiferencia = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.dtgtabla)).BeginInit();
             this.SuspendLayout();
             // 
@@ -207,11 +210,44 @@
             this.txtdato.Size = new System.Drawing.Size(100, 20);
             this.txtdato.TabIndex = 26;
             // 
+            // lbtimestar
+            // 
+            this.lbtimestar.AutoSize = true;
+            this.lbtimestar.Location = new System.Drawing.Point(18, 213);
+            this.lbtimestar.Name = "lbtimestar";
+            this.lbtimestar.Size = new System.Drawing.Size(35, 13);
+            this.lbtimestar.TabIndex = 27;
+            this.lbtimestar.Text = "label5";
+            this.lbtimestar.Visible = false;
+            // 
+            // lbtimestop
+            // 
+            this.lbtimestop.AutoSize = true;
+            this.lbtimestop.Location = new System.Drawing.Point(122, 213);
+            this.lbtimestop.Name = "lbtimestop";
+            this.lbtimestop.Size = new System.Drawing.Size(35, 13);
+            this.lbtimestop.TabIndex = 28;
+            this.lbtimestop.Text = "label6";
+            this.lbtimestop.Visible = false;
+            // 
+            // lbdiferencia
+            // 
+            this.lbdiferencia.AutoSize = true;
+            this.lbdiferencia.Location = new System.Drawing.Point(241, 213);
+            this.lbdiferencia.Name = "lbdiferencia";
+            this.lbdiferencia.Size = new System.Drawing.Size(35, 13);
+            this.lbdiferencia.TabIndex = 29;
+            this.lbdiferencia.Text = "label7";
+            this.lbdiferencia.Visible = false;
+            // 
             // Inserciones
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(720, 238);
+            this.Controls.Add(this.lbdiferencia);
+            this.Controls.Add(this.lbtimestop);
+            this.Controls.Add(this.lbtimestar);
             this.Controls.Add(this.txtdato);
             this.Controls.Add(this.btnconsultar);
             this.Controls.Add(this.label4);
@@ -257,5 +293,8 @@
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.Button btnconsultar;
         private System.Windows.Forms.TextBox txtdato;
+        private System.Windows.Forms.Label lbtimestar;
+        private System.Windows.Forms.Label lbtimestop;
+        private System.Windows.Forms.Label lbdiferencia;
     }
 }

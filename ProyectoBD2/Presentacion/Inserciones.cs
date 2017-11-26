@@ -25,7 +25,8 @@ namespace Presentacion
 
         private void btninsert01_Click(object sender, EventArgs e)
         {
-            try
+            lbtimestar.Text = DateTime.Now.ToLongTimeString();
+            try             
             {
                 if (cmbtablas.Text != " ")
                 {
@@ -40,6 +41,7 @@ namespace Presentacion
                         insert.insert(cmbtablas.Text, cmbcolumna01.Text, txtdato01.Text);
                         MessageBox.Show("Se insertó la fila correctamente");
                         limpiar();
+                        lbtimestop.Text = DateTime.Now.ToLongTimeString();
                         consultarcolumnas();
                     }
                 }
@@ -52,6 +54,7 @@ namespace Presentacion
             {
                 MessageBox.Show("Error de sintaxis, favor revisar");
             }
+            calculoTiempo();
 
         }
 
@@ -102,6 +105,7 @@ namespace Presentacion
             dttablas = consulta.ConsultarTablas();
             dtgtabla.DataSource = dttablas;
         }
+
         public void llenarcombotablas()
         {
             try
@@ -188,16 +192,19 @@ namespace Presentacion
 
         private void eliminarfilas()
         {
+            lbtimestar.Text = DateTime.Now.ToLongTimeString();
             try
             {
                 Logica.Creartabla eliminarfila = new Logica.Creartabla();
                 eliminarfila.eliminarfilas(cmbtablas.Text, cmbideliminar.Text);
                 MessageBox.Show("Se eliminó la fila correctamente");
+                lbtimestop.Text = DateTime.Now.ToLongTimeString();
             }
             catch 
             {
                 MessageBox.Show("Error de sintaxis");
             }
+            calculoTiempo();
         }
         private void update()
         {
@@ -221,6 +228,27 @@ namespace Presentacion
             cmbidupdate.Text = "";
             cmbupdate.Text = "";
             txtdato.Text = "";
+        }
+
+        private void calculoTiempo()
+        {
+            try
+            {
+                DateTime var1 = (DateTime.Parse(lbtimestar.Text));
+                string[] fecha = new string[3];
+                string temp = lbtimestop.Text;
+                fecha = temp.Split(':');
+                DateTime var2 = (DateTime.Parse(lbtimestop.Text));
+                var2 = new DateTime(var1.Year, var1.Month, var1.Day, Convert.ToInt32(fecha[0]), Convert.ToInt32(fecha[1]), Convert.ToInt32(fecha[2]));
+                TimeSpan dif = new TimeSpan();
+                dif = var2 - var1;
+                lbdiferencia.Text = dif.ToString();
+                MessageBox.Show("Tiempo demorado: " + lbdiferencia.Text);
+            }
+            catch
+            {
+                MessageBox.Show("Error al calcular tiempo");
+            }
         }
 
         private void cmbtablas_Click(object sender, EventArgs e)
@@ -258,17 +286,28 @@ namespace Presentacion
 
         private void btnupdate_Click(object sender, EventArgs e)
         {
-            if (cmbupdate.Text == "ID")
+            lbtimestar.Text = DateTime.Now.ToLongTimeString();
+            try
             {
-                MessageBox.Show("Columna ID inhabilitada para edición");
-                limpiar();
+                if (cmbupdate.Text == "ID")
+                {
+                    MessageBox.Show("Columna ID inhabilitada para edición");
+                    limpiar();
+                }
+                else
+                {
+                    update();
+                    limpiar();
+                    lbtimestop.Text = DateTime.Now.ToLongTimeString();
+                    consultarcolumnas();
+                }
             }
-            else
+            catch 
             {
-                update();
-                limpiar();
-                consultarcolumnas();
+                MessageBox.Show("Error de sintaxis");
             }
+            calculoTiempo();
+
         }
 
         private void cmbupdate_Click(object sender, EventArgs e)

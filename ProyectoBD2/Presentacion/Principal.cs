@@ -13,7 +13,8 @@ namespace Presentacion
     public partial class Principal : Form
     {
         private int childFormNumber = 0;
-
+        int contCrearTablas = 0;
+        int contManipularDatos = 0;
         public Principal()
         {
             InitializeComponent();
@@ -100,16 +101,34 @@ namespace Presentacion
 
         }
 
-        private void crearTablasYColumnasToolStripMenuItem_Click(object sender, EventArgs e)
+        public void crearTablasYColumnasToolStripMenuItem_Click(object sender, EventArgs e)
         {
             Crear crear = new Crear();
             crear.Show();
+
+            
+            contCrearTablas++;
         }
 
-        private void manipularDatosToolStripMenuItem_Click(object sender, EventArgs e)
+        public void manipularDatosToolStripMenuItem_Click(object sender, EventArgs e)
         {
             Inserciones insertar = new Inserciones();
             insertar.Show();
+            
+            contManipularDatos++;
+        }
+           
+        public void FormMasUsado()
+        {
+
+            if (contManipularDatos<contCrearTablas)
+            {
+                MessageBox.Show("La plantilla más usada es Crear Tablas con " + contCrearTablas + "veces usada");
+            }else
+            {
+                MessageBox.Show("La plantilla más usada es Manipular Datos con" + contManipularDatos + "veces usada");
+            }
+
         }
     }
 }

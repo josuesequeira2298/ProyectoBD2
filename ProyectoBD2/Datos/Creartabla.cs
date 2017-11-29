@@ -311,16 +311,13 @@ namespace Datos
             return false;
         }
 
-        public bool selecttablas(string nombretabla1, string nombretabla2, string dato1, string dato2)
+        public DataTable selecttablas(string nombretabla1, string nombretabla2, string dato1, string dato2)
         {
-            bool select;
-
-            select = conect.ejecutarInsert("select * from "+ nombretabla1 +" join "+ nombretabla2 +" on '"+ dato2 + "' = '" + dato1 + "'");
-            if (select)
-            {
-                return true;
-            }
-            return false;
+          
+            Datos.Conexion conectar = new Datos.Conexion();
+            DataTable dttablas;
+            dttablas = conectar.ejecutar("select J." + dato1 + ", p." + dato2 + " from " + nombretabla1 + " J, " + nombretabla2 + " P where J.ID = P.ID;");
+            return dttablas;
         }
 
     }

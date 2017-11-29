@@ -134,6 +134,9 @@ namespace Presentacion
 
         private void select()
         {
+            Logica.Creartabla consulta = new Logica.Creartabla();
+            DataTable dttablas = new DataTable();
+
             lbtimestar.Text = DateTime.Now.ToLongTimeString();
             try
             {
@@ -141,6 +144,9 @@ namespace Presentacion
                 select.select(cbotabla1.Text,cbotabla2.Text,cbocolumna1.Text,cbocolumna2.Text);
                 MessageBox.Show("Se realizó el select exitosamente");
                 lbtimestop.Text = DateTime.Now.ToLongTimeString();
+
+                dttablas = consulta.select(cbotabla1.Text,cbotabla2.Text,cbocolumna1.Text,cbocolumna2.Text);
+                dtselecttablas.DataSource = dttablas;
             }
             catch 
             {
@@ -193,7 +199,7 @@ namespace Presentacion
         private void button1_Click(object sender, EventArgs e)
         {
             select();
-            ConsultarTablas();
+            //ConsultarTablas();
         }
     }
 }

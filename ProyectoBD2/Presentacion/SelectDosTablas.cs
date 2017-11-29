@@ -94,11 +94,34 @@ namespace Presentacion
 
         public void ConsultarTablas()
         {
-            Logica.Creartabla consulta = new Logica.Creartabla();
-            DataTable dttablas = new DataTable();
+            try
+            {
+                Logica.Creartabla consulta = new Logica.Creartabla();
+                DataTable dttablas = new DataTable();
 
-            dttablas = consulta.ConsultarTablas();
-            dtselecttablas.DataSource = dttablas;
+                dttablas = consulta.ConsultarTablas();
+                dtselecttablas.DataSource = dttablas;
+            }
+            catch 
+            {
+
+                MessageBox.Show("Errorde sintaxis");
+            }
+        }
+        public void ConsultarSelect()
+        {
+            try
+            {
+                Logica.Creartabla consulta = new Logica.Creartabla();
+                DataTable dttablaselect = new DataTable();
+
+                dtselecttablas.DataSource = cbotabla1.Text + cbotabla2.Text;
+            }
+            catch 
+            {
+
+                MessageBox.Show("Error de sintaxis");
+            }
         }
 
 
@@ -137,10 +160,17 @@ namespace Presentacion
             lbtimestar.Text = DateTime.Now.ToLongTimeString();
             try
             {
-                Logica.Creartabla select = new Logica.Creartabla();
-                select.select(cbotabla1.Text,cbotabla2.Text,cbocolumna1.Text,cbocolumna2.Text);
-                MessageBox.Show("Se realizó el select exitosamente");
-                lbtimestop.Text = DateTime.Now.ToLongTimeString();
+                if (cbocolumna1.Text == cbocolumna2.Text)
+                {
+                    Logica.Creartabla select = new Logica.Creartabla();
+                    select.select(cbotabla1.Text, cbotabla2.Text, cbocolumna1.Text, cbocolumna2.Text);
+                    MessageBox.Show("Se realizó el select exitosamente");
+                    lbtimestop.Text = DateTime.Now.ToLongTimeString();
+                }
+                else
+                {
+                    MessageBox.Show("Las columnas de conexión no son iguales");
+                }
             }
             catch 
             {
@@ -193,7 +223,7 @@ namespace Presentacion
         private void button1_Click(object sender, EventArgs e)
         {
             select();
-            ConsultarTablas();
+            ConsultarSelect();
         }
     }
 }

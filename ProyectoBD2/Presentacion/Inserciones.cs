@@ -208,16 +208,19 @@ namespace Presentacion
         }
         private void update()
         {
+            lbtimestar.Text = DateTime.Now.ToLongTimeString();
             try
             {
                 Logica.Creartabla update = new Logica.Creartabla();
                 update.update(cmbtablas.Text, cmbupdate.Text, txtdato.Text, cmbidupdate.Text);
                 MessageBox.Show("Se actualizó con éxito la fila");
+                lbtimestop.Text = DateTime.Now.ToLongTimeString();
             }
             catch
             {
                 MessageBox.Show("Error de sintaxis");
             }
+            calculoTiempo();
         }
         private void limpiar()
         {

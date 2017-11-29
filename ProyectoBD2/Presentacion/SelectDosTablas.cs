@@ -65,7 +65,7 @@ namespace Presentacion
 
                 dttablas = datos.llenarcombocolumna(cbotabla1.Text);
                 cbocolumna1.DisplayMember = "NombreColumna";
-                cbocolumna1.ValueMember = "id";
+                cbocolumna1.ValueMember = "ID";
                 cbocolumna1.DataSource = dttablas;
             }
             catch (Exception ex)
@@ -83,7 +83,7 @@ namespace Presentacion
 
                 dttablas = datos.llenarcombocolumna(cbotabla2.Text);
                 cbocolumna2.DisplayMember = "NombreColumna";
-                cbocolumna2.ValueMember = "id";
+                cbocolumna2.ValueMember = "ID";
                 cbocolumna2.DataSource = dttablas;
             }
             catch (Exception ex)
@@ -134,16 +134,39 @@ namespace Presentacion
 
         private void select()
         {
+            lbtimestar.Text = DateTime.Now.ToLongTimeString();
             try
             {
                 Logica.Creartabla select = new Logica.Creartabla();
                 select.select(cbotabla1.Text,cbotabla2.Text,cbocolumna1.Text,cbocolumna2.Text);
                 MessageBox.Show("Se realizó el select exitosamente");
+                lbtimestop.Text = DateTime.Now.ToLongTimeString();
             }
             catch 
             {
 
                 MessageBox.Show("Error de sintaxis");
+            }
+            calculoTiempo();
+        }
+        private void calculoTiempo()
+        {
+            try
+            {
+                DateTime var1 = (DateTime.Parse(lbtimestar.Text));
+                string[] fecha = new string[3];
+                string temp = lbtimestop.Text;
+                fecha = temp.Split(':');
+                DateTime var2 = (DateTime.Parse(lbtimestop.Text));
+                var2 = new DateTime(var1.Year, var1.Month, var1.Day, Convert.ToInt32(fecha[0]), Convert.ToInt32(fecha[1]), Convert.ToInt32(fecha[2]));
+                TimeSpan dif = new TimeSpan();
+                dif = var2 - var1;
+                lbdiferencia.Text = dif.ToString();
+                MessageBox.Show("Tiempo demorado: " + lbdiferencia.Text);
+            }
+            catch
+            {
+                MessageBox.Show("Error al calcular tiempo");
             }
         }
 

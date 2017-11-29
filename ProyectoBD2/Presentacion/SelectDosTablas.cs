@@ -132,6 +132,21 @@ namespace Presentacion
             }
         }
 
+        private void select()
+        {
+            try
+            {
+                Logica.Creartabla select = new Logica.Creartabla();
+                select.select(cbotabla1.Text,cbotabla2.Text,cbocolumna1.Text,cbocolumna2.Text);
+                MessageBox.Show("Se realizó el select exitosamente");
+            }
+            catch 
+            {
+
+                MessageBox.Show("Error de sintaxis");
+            }
+        }
+
         private void cbotabla1_Click(object sender, EventArgs e)
         {
             llenarcombotablas();
@@ -150,6 +165,11 @@ namespace Presentacion
         private void cbocolumna2_Click(object sender, EventArgs e)
         {
             llenarcombocolumnas2();
+        }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            select();
         }
     }
 }

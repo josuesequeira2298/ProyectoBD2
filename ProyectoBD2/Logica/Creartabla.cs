@@ -112,5 +112,10 @@ namespace Logica
         {
             return new Datos.Creartabla().insert(nombretabla, nombreclumna, dato);
         }
+
+        public bool select(string nombretabla1, string nombretabla2, string dato1, string dato2)
+        {
+            return new Datos.Creartabla().selecttablas(nombretabla1, nombretabla2, dato1, dato2);
+        }
     }
 }

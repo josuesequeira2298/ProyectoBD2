@@ -311,6 +311,18 @@ namespace Datos
             return false;
         }
 
+        public bool selecttablas(string nombretabla1, string nombretabla2, string dato1, string dato2)
+        {
+            bool select;
+
+            select = conect.ejecutarInsert("select * from "+ nombretabla1 +" join "+ nombretabla2 +" on '"+ dato2 + "' = '" + dato1 + "'");
+            if (select)
+            {
+                return true;
+            }
+            return false;
+        }
+
     }
 
 }
